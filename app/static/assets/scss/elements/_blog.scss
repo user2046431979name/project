@@ -1,0 +1,124 @@
+// Start blog css here
+.blog__section {
+    &--inner{
+        padding: 1rem;
+        &.p-0{
+            padding: 0;
+        }
+    }
+}
+.blog__items{
+    box-shadow: 0 3px 6px rgba(68, 68, 68, 0.2);
+    border-radius: 1rem 1rem 0 0;
+    &:hover{
+        & .blog__thumbnail--img{
+            transform: scale(1.05);
+        }
+    }
+}
+.blog__thumbnail{
+    overflow: hidden;
+    border-radius: 1rem 1rem 0 0;
+    &--link{
+        width: 100%;
+    }
+    &--img{
+        width: 100%;
+    }
+}
+.blog__content{
+    padding: 1.8rem 1.5rem 1.5rem;
+    &--meta{
+        margin-bottom: 1rem;
+        @media only screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+        &__text{
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin-right: 1.8rem;
+            &:last-child{
+                margin-right: 0;
+            }
+            @media only screen and (min-width: 1200px) {
+                margin-right: 2.2rem;
+            }
+            @media only screen and (max-width: 767px) {
+                margin-right: 0;
+                margin-bottom: 0.8rem;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &__icon{
+            color: var(--secondary-color);
+            margin-right: 0.4rem;
+        }
+    }
+   &--title{
+       line-height: 2.5rem;
+       margin-bottom: 1.4rem;
+   }
+   &--desc{
+       font-size: 1.6rem;
+       line-height: 2.5rem;
+       margin-bottom: 2.2rem;
+       @media only screen and (max-width: 767px) {
+            font-size: 1.5rem;
+        }
+    }
+   &--btn{
+        background: var(--white-color);
+        border: 1px solid var(--primary-color);
+        color: var(--secondary-color);
+        font-size: 1.4rem;
+        border-radius: 2rem;
+        @media only screen and (min-width: 768px) {
+            line-height: 3rem;
+            height: 3rem;
+            padding: 0 1.7rem;
+        }
+        &:hover{
+            background: var(--secondary-color);
+            color: var(--white-color);
+            border-color: var(--secondary-color);
+        }
+        &.btn__style3{
+            color: var(--white-color);
+            border-radius: 0.2rem;
+            font-size: 1.3rem;
+        }
+   }
+}
+
+
+// End blog css here
+
+
+// blog page css here
+.articl__post--items{
+    margin-bottom: 2rem;
+    &:hover{
+        & .articl__post--items__img{
+            transform: scale(1.1);
+        }
+    }
+    &:last-child{
+        margin-bottom: 0;
+    }
+    &__thumbnail{
+        width: 9rem;
+        overflow: hidden;
+    }
+    &__content{
+        width: calc(100% - 9rem);
+        padding-left: 1.5rem;
+        &--title{
+            @media only screen and (min-width: 768px) {
+                font-size: 1.7rem;
+                line-height: 2.2rem;
+            }
+        }
+    }
+}

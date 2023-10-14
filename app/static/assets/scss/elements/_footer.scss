@@ -1,0 +1,185 @@
+// Start footer css here
+.footer__bg{
+    background: url(../img/banner/footer-bg.webp);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+}
+.footer__section{
+    @media only screen and (max-width: 991px) {
+        padding-bottom: 7rem;
+    }
+}
+.main__footer{
+    border-bottom: 1px solid var(--border-color);
+    padding: 5rem 0 1.5rem;
+    @media only screen and (min-width: 992px) {
+        padding: 5rem 0 2rem;
+    }
+    @media only screen and (max-width: 767px) {
+        padding: 6rem 0 3.5rem;
+    }
+}
+.footer__social{
+    margin-top: 2.5rem;
+    @media only screen and (min-width: 992px) {
+        margin-top: 3.2rem;
+    }
+}
+.social__shear{
+    &--list{
+        margin-right: 1.6rem;
+        &:last-child{
+            margin-right: 0;
+        }
+        &__icon{
+            color: var(--secondary-color);
+            &:hover{
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+.footer__logo{
+    margin-bottom: 1.5rem;
+}
+.sm__footer--widget__bock{
+    display: none;
+    @media only screen and (max-width: 767px) {
+        display: block;
+    }
+}
+.footer__widget{
+    @media only screen and (max-width: 991px) {
+        margin-bottom: 3rem;
+    }
+    @media only screen and (max-width: 767px) {
+        margin-bottom: 0;
+    }
+    &--desc{
+        font-size: 1.5rem;
+    }
+    &--title{
+        margin-bottom: 2rem;
+        font-weight: 400;
+        position: relative;
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        @media only screen and (min-width: 576px) {
+            font-size: 2rem;
+            line-height: 2.4rem;
+        }
+        @media only screen and (min-width: 768px) {
+            margin-bottom: 1.5rem;
+        }
+        @media only screen and (min-width: 992px) {
+            font-size: 2rem;
+            line-height: 2.6rem;
+            margin-bottom: 1.7rem;
+        }
+        &__arrowdown--icon{
+            position: absolute;
+            right: 0;
+            top: 38%;
+            transition: .3s;
+            display: none;
+            @media only screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+    }
+    &.active{
+        padding-bottom: 3rem;
+        & .footer__widget--title__arrowdown--icon{
+            transform: rotate(
+            180deg);
+        }
+    }
+    &--menu{
+        &__list{
+            margin-bottom: 0.8rem;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+        &__text{
+            line-height: 3rem;
+            font-size: 1.5rem;
+            color: var(--text-gray-color);
+            font-family: var(--open-sans);
+        }
+    }
+}
+
+.footer__widget--button{
+    position: absolute;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    content: "";
+    color: transparent;
+    border: 0;
+    background-color: transparent;
+    @media only screen and (max-width: 767px) {
+        visibility: visible;
+    }
+}
+.footer__widget--inner {
+    @media only screen and (max-width: 767px) {
+        display: none;
+    }
+}
+
+.footer__bottom{
+    padding: 1.5rem 0;
+    @media only screen and (max-width: 991px) {
+        flex-direction: column;
+    }
+    
+}
+
+.copyright__content{
+    font-size: 1.3rem;
+    @media only screen and (max-width: 991px) {
+        margin-bottom: 2rem;
+    }
+    @media only screen and (max-width: 767px) {
+        text-align: center;
+    }
+    &--link{
+        color: var(--primary-color);
+        font-weight: 600;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer__contact--info{
+    &__inner{
+        margin-bottom: 1.5rem;
+    }
+    &__text{
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        color: var(--text-gray-color);
+        font-family: var(--open-sans);
+        margin-bottom: 1rem;
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.footer__payment--method{
+    &__title{
+        font-size: 1.5rem;
+        line-height: 2.2rem;
+        font-family: var(--open-sans);
+        margin-bottom: 1.7rem;
+    }
+}

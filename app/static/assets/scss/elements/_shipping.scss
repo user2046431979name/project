@@ -1,0 +1,167 @@
+// Start shipping css here
+.shipping__section{
+    &--inner{
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 2.5rem;
+        background: var(--white-color);
+        box-shadow: 0 8px 18px rgba(70, 70, 70, 0.16);
+        @media only screen and (min-width: 992px) {
+            max-width: 750px;
+            padding: 3rem;
+        }
+        @media only screen and (min-width: 1366px) {
+            max-width: 800px;
+            padding: 3.5rem 3rem;
+        }
+        @media only screen and (min-width: 1600px) {
+            max-width: 868px;
+            padding: 4rem 3rem;
+        }
+        @media only screen and (max-width: 767px) {
+            padding: 2.5rem 1.5rem;
+        }
+        @media only screen and (max-width: 575px) {
+            flex-wrap: wrap;
+        } 
+    }
+}
+.shipping_mt{
+    margin-top: -5rem;
+    @media only screen and (max-width: 767px) {
+        margin-top: 6rem;
+    }
+}
+.shipping__items{
+    position: relative;
+    padding-right: 4rem;
+    @media only screen and (min-width: 992px) {
+        padding-right: 6rem;
+    } 
+    @media only screen and (max-width: 767px) {
+        padding-right: 2.2rem;
+    } 
+    @media only screen and (max-width: 575px) {
+        width: 50%;
+        padding: 1rem;
+    } 
+    &::before{
+        position: absolute;
+        content: "";
+        width: 6.5rem;
+        height: 0.1rem;
+        border: 1px dashed var(--secondary-color);
+        right: -14px;
+        top: 20px;
+        opacity: 0.6;
+        @media only screen and (min-width: 992px) {
+            width: 8.5rem;
+        }
+        @media only screen and (max-width: 767px) {
+            display: none;
+        } 
+    }
+       
+    &:last-child{
+        padding-right: 0;
+        &::before{
+            display: none;
+        }
+    }
+    &--content{
+        margin-top: 1.3rem;
+        @media only screen and (max-width: 575px) {
+            margin-top: 0.8rem;
+        } 
+        &__title{
+            font-weight: 600;
+            font-size: 1.7rem;
+            line-height: 2.5rem;
+            @media only screen and (max-width: 767px) {
+                font-size: 1.6rem;
+            } 
+        }
+    }
+}
+
+// home two css here
+.shipping__style2{
+    &--inner{
+        border: 1px solid var(--gray-color);
+        padding: 3rem;
+        box-shadow: 0 3px 6px rgba(100, 100, 100, 0.10);
+        @media only screen and (min-width: 992px) {
+            padding: 3rem 2rem;
+        }
+        @media only screen and (min-width: 1200px) {
+            padding: 3rem;
+        }
+        @media only screen and (max-width: 991px) {
+            flex-wrap: wrap;
+            padding: 3rem 2rem 0.4rem;
+        }
+    }
+    &--items{
+        position: relative;
+        padding-right: 5.5rem;
+        margin-right: 5.5rem;
+        @media only screen and (min-width: 992px) {
+            padding-right: 2rem;
+            margin-right: 2rem;
+        }
+        @media only screen and (min-width: 1200px) {
+            padding-right: 5.5rem;
+            margin-right: 5.5rem;
+        }
+        @media only screen and (max-width: 991px) {
+            padding-right: 3rem;
+            margin-right: 0;
+            width: 33.33%;
+            margin-bottom: 2.5rem;
+        }
+        @media only screen and (max-width: 767px) {
+            width: 50%;
+        }
+        @media only screen and (max-width: 575px) {
+            width: 100%;
+            padding-right: 0;
+            justify-content: center;
+        }
+        &:last-child{
+            padding-right: 0;
+            margin-right: 0;
+            &::before{
+                display: none;
+            }
+        }
+        &::before{
+            position: absolute;
+            content: "";
+            width: 0.1rem;
+            height: 100%;
+            background: var(--gray-color);
+            right: 0;
+            top: 0;
+            @media only screen and (max-width: 991px) {
+                display: none;
+            }
+        }
+    }
+    &--icon{
+        margin-right: 2.5rem;
+        color: var(--secondary-color2);
+    }
+    &--content{
+        &__title{
+            font-size: 1.5rem;
+            line-height: 2.2rem;
+        }
+        &__desc{
+            font-family: var(--open-sans);
+            line-height: 2.2rem;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+

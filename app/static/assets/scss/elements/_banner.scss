@@ -1,0 +1,670 @@
+// Start banner css here
+.banner__items {
+  overflow: hidden;
+  &:hover {
+    & .banner__items--thumbnail__img {
+      transform: scale(1.05);
+    }
+  }
+  &--thumbnail {
+    display: block;
+    width: 100%;
+    @media only screen and (max-width: 575px) {
+      
+    }
+    &__img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &--content {
+    position: absolute;
+    top: 2.5rem;
+    left: 2rem;
+    cursor: pointer;
+    @media only screen and (min-width: 992px) {
+      top: 3rem;
+      left: 3.5rem;
+    }
+    &.one {
+      top: 50%;
+      left: auto;
+      right: 2rem;
+      transform: translatey(-50%);
+      @media only screen and (min-width: 768px) {
+        right: 2.5rem;
+      }
+      @media only screen and (min-width: 992px) {
+        right: 4.5rem;
+      }
+    }
+    &.two {
+      top: 50%;
+      transform: translatey(-50%);
+    }
+    &.three {
+      left: 3rem;
+      top: 20%;
+      @media only screen and (min-width: 992px) {
+        left: 6rem;
+      }
+    }
+    &.four {
+      left: 2rem;
+      right: 2rem;
+      text-align: center;
+    }
+    &.five {
+      top: 50%;
+      left: auto;
+      right: 2rem;
+      transform: translatey(-50%);
+      @media only screen and (min-width: 768px) {
+        right: 2.5rem;
+      }
+      @media only screen and (min-width: 992px) {
+        right: 4.5rem;
+      }
+    }
+    &__title {
+      position: relative;
+      padding-bottom: 1rem;
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      @media only screen and (min-width: 768px) {
+        font-size: 2rem;
+        line-height: 2.8rem;
+      }
+      @media only screen and (min-width: 992px) {
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+      }
+      @media only screen and (min-width: 1200px) {
+        font-size: 2.4rem;
+        line-height: 3rem;
+      }
+      @media only screen and (min-width: 1366px) {
+        font-size: 2.8rem;
+        line-height: 3.3rem;
+      }
+      @media only screen and (min-width: 1600px) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 10.4rem;
+        height: 0.4rem;
+        background: url(../img/banner/border-shape.webp);
+        bottom: 0;
+        left: 0;
+      }
+      &.four {
+        &::before {
+          left: 50%;
+          transform: translatex(-50%);
+        }
+      }
+    }
+  }
+}
+
+.banner__items--content__style2 {
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translatey(-50%);
+  &.right {
+    left: auto;
+    right: 3rem;
+  }
+  &--title {
+    font-size: 1.7rem;
+    line-height: 2.1rem;
+    margin-bottom: 0.8rem;
+    @media only screen and (min-width: 768px) {
+      font-size: 1.8rem;
+      line-height: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    @media only screen and (min-width: 992px) {
+      font-size: 2rem;
+      line-height: 2.6rem;
+      margin-bottom: 1.2rem;
+    }
+    @media only screen and (min-width: 1200px) {
+      font-size: 2.2rem;
+      line-height: 3rem;
+    }
+    @media only screen and (min-width: 1366px) {
+      font-size: 2.5rem;
+      line-height: 3.6rem;
+    }
+    @media only screen and (min-width: 1600px) {
+      font-size: 2.8rem;
+      line-height: 4rem;
+    }
+  }
+}
+
+.deals__banner {
+  &--thumbnail {
+    overflow: hidden;
+    @media only screen and (max-width: 1199px) {
+      margin-top: 4rem;
+    }
+    &__link{
+      width: 100%;
+    }
+    &__img{
+      width: 100%;
+    }
+    &:hover {
+      & .deals__banner--thumbnail__img {
+        transform: scale(1.05);
+      }
+    }
+    &.mt-0 {
+      margin-top: 0;
+    }
+  }
+  &--content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 2rem;
+    &__maintitle {
+      margin-bottom: 1.6rem;
+    }
+  }
+}
+.countdown__item {
+  margin-right: 2rem;
+  text-align: center;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.deals__banner--countdown {
+  margin-bottom: 2.2rem;
+  @media only screen and (max-width: 480px) {
+    justify-content: center;
+  }
+  & .countdown__number {
+    width: 4rem;
+    height: 4rem;
+    line-height: 4rem;
+    background: var(--white-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    font-family: var(--open-sans);
+    @media only screen and (min-width: 1200px) {
+      font-size: 1.8rem;
+    }
+  }
+  & .countdown__text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-transform: capitalize;
+  }
+}
+.banner__video--thumbnail {
+  &__img {
+    width: 100%;
+    @media only screen and (max-width: 575px) {
+      height: 17rem;
+      object-fit: cover;
+      margin: 0 auto;
+    }
+  }
+}
+.bideo__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translatey(-50%) translatex(-50%);
+  &--icon {
+    width: 8.4rem;
+    height: 8.4rem;
+    background: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--secondary-color);
+    position: relative;
+    transition: 0.5s;
+    animation: animate 2s linear infinite;
+    transform: scale(1);
+    &:hover {
+      background: var(--secondary-color);
+      color: var(--white-color);
+      transform: scale(1.2);
+    }
+    @media only screen and (max-width: 767px) {
+      width: 6rem;
+      height: 6rem;
+    }
+    & svg {
+      @media only screen and (max-width: 767px) {
+        width: 3.5rem;
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 50px rgba(255, 193, 7, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 193, 7, 0);
+  }
+}
+// End banner css here
+
+// home two css here
+.banner__sidebar--two {
+  @media only screen and (max-width: 767px) {
+    text-align: center;
+    margin-top: 3rem;
+  }
+}
+.banner__sidebar2--img {
+  @media only screen and (max-width: 767px) {
+    margin: 0 auto;
+  }
+}
+.banner2__col--3 {
+  @media (min-width: 768px) {
+    width: 29%;
+  }
+  @media (min-width: 992px) {
+    width: 29%;
+  }
+  @media (min-width: 1200px) {
+    width: 27%;
+  }
+}
+.banner__sidebar2--content {
+  @media only screen and (max-width: 767px) {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+.banner2__col--6 {
+  @media (min-width: 768px) {
+    width: 52%;
+  }
+}
+.banner2__col--6r {
+  @media (min-width: 768px) {
+    width: 48%;
+  }
+}
+.banner__img--height {
+  @media (max-width: 479px) {
+    height: 18rem;
+    object-fit: cover;
+  }
+}
+.banner__content--style2 {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  &__subtitle {
+    font-size: 1.3rem;
+    line-height: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    &.text-ofwhite {
+      color: #bcbcbc;
+    }
+  }
+  &--title {
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    @media only screen and (min-width: 1200px) {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &.text-white {
+      color: var(--white-color);
+    }
+  }
+  &__link {
+    color: var(--secondary-color2);
+    &:hover {
+      color: var(--secondary-color) !important;
+    }
+    &.primary__btn.style2 {
+      background: inherit;
+      border: 1px solid var(--primary-color);
+      border-radius: 2rem;
+      padding: 0 2.8rem;
+      &:hover {
+        background: var(--secondary-color2);
+        border-color: var(--secondary-color2);
+        color: var(--white-color) !important;
+      }
+      &.text-white {
+        border: 1px solid var(--secondary-color2);
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+.banner__section--inner {
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+.banner__discount--content {
+  width: 33.8rem;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  &__subtitle {
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    color: var(--text-gray-color);
+    margin-bottom: 1.2rem;
+  }
+  &__title {
+    margin-bottom: 0.8rem;
+    @media only screen and (min-width: 1200px) {
+      font-size: 3.5rem;
+      line-height: 4.5rem;
+      margin-bottom: 1rem;
+    }
+    @media only screen and (min-width: 1600px) {
+      font-size: 4rem;
+      line-height: 5rem;
+      margin-bottom: 1.3rem;
+    }
+  }
+  &__desc {
+    margin-bottom: 1.5rem;
+    @media only screen and (min-width: 1200px) {
+      margin-bottom: 2.5rem;
+    }
+    @media only screen and (min-width: 1600px) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+.banner2__right--sidebar {
+  width: calc(100% - 33.8rem);
+  padding: 3.5rem 0 3rem 3.8rem;
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    padding: 2rem 0 2rem 2rem;
+  }
+  @media only screen and (max-width: 575px) {
+    padding: 2rem 0 2rem 0;
+  }
+  &:hover {
+    &::before {
+      border-color: var(--secondary-color2);
+    }
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    border: 4px solid var(--primary-color);
+    right: 0;
+    top: 0;
+    transition: var(--transition);
+  }
+}
+
+.banner2__sidebar--items {
+  margin-right: 2rem;
+  overflow: hidden;
+  &:last-child {
+    margin-right: 0;
+  }
+  @media (min-width: 992px) {
+    margin-right: 3rem;
+  }
+  &.one {
+    margin-top: 4rem;
+    @media (min-width: 992px) {
+      margin-top: 8rem;
+    }
+  }
+  &.two {
+    margin-top: 2rem;
+    @media (min-width: 992px) {
+      margin-top: 4rem;
+    }
+  }
+  &:hover {
+    & .banner__items--thumbnail__img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.deals__content--style2 {
+  position: absolute;
+  left: 3.5rem;
+  top: 50%;
+  transform: translatey(-50%);
+  @media only screen and (max-width: 480px) {
+    text-align: center;
+  }
+  &__subtitle {
+    font-size: 1.3rem;
+    line-height: 2rem;
+    color: var(--text-gray-color);
+    margin-bottom: 1rem;
+  }
+  &__maintitle {
+    margin-bottom: 1.7rem;
+    color: var(--primary-color);
+  }
+}
+
+.deals__banner--thumbnail__img.style2 {
+  @media (max-width: 767px) {
+    height: 30rem;
+    object-fit: cover;
+  }
+}
+.product__banner {
+  overflow: hidden;
+  &:hover {
+    & .product__banner--thumbnail__img {
+      transform: scale(1.05);
+    }
+  }
+  &--content {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    &__subtitle {
+      font-family: var(--open-sans);
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+    }
+    &--title {
+      font-size: 2.2rem;
+      line-height: 2.8rem;
+      margin-bottom: 2rem;
+    }
+    &__price {
+      font-size: 2rem;
+      line-height: 2.2rem;
+      @media only screen and (min-width: 992px) {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+      }
+    }
+  }
+}
+
+// home three css here
+.choiceus__banner {
+  &--thumbnail {
+    overflow: hidden;
+    &.one {
+      @media only screen and (max-width: 991px) {
+        margin-right: 5rem;
+      }
+    }
+    &.two {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translatey(-50%);
+    }
+    &__img {
+      &:hover {
+        transform: scale(1.05);
+      }
+      &.two {
+        @media only screen and (max-width: 991px) {
+          max-width: 28rem;
+        }
+        @media only screen and (max-width: 400px) {
+          max-width: 20rem;
+        }
+        @media only screen and (max-width: 300px) {
+          max-width: 12rem;
+        }
+      }
+    }
+  }
+}
+
+.bideo__play {
+  &.style3 {
+    left: 70%;
+  }
+  &--icon.style3 {
+    background: var(--primary-color);
+    color: var(--white-color);
+    &:hover {
+      background: var(--secondary-color);
+    }
+  }
+}
+
+.choiceus__content {
+  padding-left: 3rem;
+  @media only screen and (max-width: 767px) {
+    margin-top: 3rem;
+  }
+  @media only screen and (max-width: 991px) {
+    padding-left: 0;
+  }
+  &--title {
+    margin-bottom: 2.2rem;
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 1.2rem;
+    }
+  }
+  &--desc {
+    margin-bottom: 4.2rem;
+    @media only screen and (min-width: 1200px) {
+      font-size: 1.7rem;
+      line-height: 2.8rem;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 2.2rem;
+    }
+  }
+}
+
+.choiceus__info {
+  margin-bottom: 5rem;
+  @media only screen and (max-width: 767px) {
+    margin-bottom: 2.5rem;
+  }
+  &--step {
+    margin-bottom: 3.5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 2.5rem;
+    }
+  }
+  &--list {
+    text-align: center;
+    margin-right: 3.2rem;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &--text {
+    display: block;
+    font-weight: 600;
+    margin-top: 1.3rem;
+    @media only screen and (max-width: 767px) {
+      margin-top: 1rem;
+    }
+  }
+  &--btn {
+    box-shadow: 0 6px 12px rgba(18, 26, 37, 0.34);
+  }
+}
+
+.banner__content--style3 {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translatey(-50%);
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    line-height: 2.4rem;
+    @media only screen and (min-width: 992px) {
+      margin-bottom: 0.5rem;
+      line-height: 2.6rem;
+    }
+    @media only screen and (min-width: 1200px) {
+      font-size: 2rem;
+      line-height: 2.4rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+  &__price {
+    display: block;
+    margin-bottom: 1.5rem;
+    @media only screen and (max-width: 767px) {
+      margin-bottom: 1rem;
+      line-height: 2.2rem;
+    }
+  }
+  &__btn {
+    height: 2.5rem;
+    line-height: 2.3rem;
+    font-size: 1.2rem;
+    border: 1px solid var(--primary-color);
+    background: inherit;
+    color: var(--primary-color);
+    padding: 0 1.5rem;
+    border-radius: 0;
+  }
+}

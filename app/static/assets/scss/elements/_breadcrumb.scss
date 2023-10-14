@@ -1,0 +1,73 @@
+// Start breadcrumb css here
+.breadcrumb__bg {
+  background: url(../img/banner/breadcrumb-bg.webp);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  @media only screen and (min-width: 768px) {
+    height: 230px;
+  }
+  @media only screen and (min-width: 992px) {
+    height: 250px;
+  }
+  @media only screen and (min-width: 1200px) {
+    height: 270px;
+  }
+  @media only screen and (min-width: 1600px) {
+    height: 300px;
+  }
+}
+
+.breadcrumb__content {
+  position: relative;
+  @media only screen and (max-width: 575px) {
+    text-align: center;
+  }
+  &--title {
+    @media only screen and (min-width: 1200px) {
+      font-size: 5rem;
+      line-height: 6rem;
+    }
+    @media only screen and (min-width: 1600px) {
+      font-size: 6rem;
+      line-height: 8rem;
+    }
+  }
+  &--menu {
+    @media only screen and (max-width: 575px) {
+      justify-content: center;
+    }
+    &__items {
+      position: relative;
+      margin-right: 20px;
+      padding-right: 22px;
+      font-size: 16px;
+      line-height: 24px;
+      @media only screen and (min-width: 768px) {
+        font-size: 18px;
+      }
+      &:last-child {
+        margin-right: 0;
+        padding-right: 0;
+        &::before {
+          display: none;
+        }
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        width: 10px;
+        height: 2px;
+        background: var(--white-color);
+        right: -4px;
+        top: 50%;
+        transform: translatey(-50%);
+      }
+    }
+  }
+}
