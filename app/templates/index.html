@@ -23,6 +23,7 @@
 <body>
 
     <!-- Start header area -->
+    
     <header class="header__section header__transparent">
         <!-- Start Header topbar -->
         <div class="header__topbar bg__primary">
@@ -35,7 +36,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="account__currency--link text-white" href="#">
-                                    <4 src="{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
+                                    <img src="{% static 'assets/img/icon/usd-icon.webp'%}" alt="currency"> </img>
                                     <span>Currency</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -90,7 +91,7 @@
                         <nav class="header__menu--navigation">
                             <ul class="d-flex">
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="index.html">Home <span class="menu__plus--icon">+</span></a>
+                                    <a class="header__menu--link" href="{% url 'index'%}">Home <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="index.html" class="header__sub--menu__link">Home One</a></li>
                                         <li class="header__sub--menu__items"><a href="index-2.html" class="header__sub--menu__link">Home Two</a></li>
@@ -143,7 +144,7 @@
                                     </ul>
                                 </li>
                                 <li class="header__menu--items">
-                                    <a class="header__menu--link" href="about.html">About US </a>  
+                                    <a class="header__menu--link" href="{% url 'about'%}">About US </a>  
                                 </li>
                                 <li class="header__menu--items">
                                     <a class="header__menu--link" href="blog.html">Blog <span class="menu__plus--icon">+</span> </a>
@@ -157,7 +158,7 @@
                                 <li class="header__menu--items">
                                     <a class="header__menu--link " href="#">Pages <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="about.html" class="header__sub--menu__link">About Us</a></li>
+                                        <li class="header__sub--menu__items"><a href="{% url 'about'%}" class="header__sub--menu__link">About Us</a></li>
                                         <li class="header__sub--menu__items"><a href="{% url 'contact' %}" class="header__sub--menu__link">Contact Us</a></li>
                                         <li class="header__sub--menu__items"><a href="cart.html" class="header__sub--menu__link">Cart Page</a></li>
                                         <li class="header__sub--menu__items"><a href="portfolio.html" class="header__sub--menu__link">Portfolio Page</a></li>
@@ -498,6 +499,10 @@
         </div>
         <!-- End serch box area -->
     </header>
+   
+
+
+
         <!-- End header area -->
 
     <main class="main__content_wrapper">

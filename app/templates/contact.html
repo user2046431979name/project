@@ -23,9 +23,10 @@
 
 <body>
     <!-- Start header area -->
-    <header class="header__section header__others border-bottom header__transparent mb-30">
+    <header class="header__section header__transparent">
+        <!-- Start Header topbar -->
         <div class="header__topbar bg__primary">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="header__topbar--inner d-flex align-items-center justify-content-between">
                     <div class="header__shipping">
                         <p class="header__shipping--text text-white">Get Up To 80% off In your first Offer!</p>
@@ -34,7 +35,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="account__currency--link text-white" href="#">
-                                    <img src="assets/img/icon/usd-icon.webp" alt="currency">
+                                    <img src="{% static 'assets/img/icon/usd-icon.webp'%}" alt="currency"> </img>
                                     <span>Currency</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -51,7 +52,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="language__switcher text-white" href="#">
-                                    <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp'%}" alt="currency">
+                                    <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp' %}" alt="currency">
                                     <span>Language</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -70,8 +71,11 @@
                 </div>
             </div>
         </div>
+        <!-- Start Header topbar -->
+
+        <!-- Start main header -->
         <div class="main__header header__sticky">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="main__header--inner position__relative d-flex justify-content-between align-items-center">
                     <div class="offcanvas__header--menu__open ">
                         <a class="offcanvas__header--menu__open--btn" href="javascript:void(0)">
@@ -80,20 +84,20 @@
                         </a>
                     </div>
                     <div class="main__logo">
-                        <a class="main__logo--link" href="index.html"><img class="main__logo--img" src="{% static 'assets/img/logo/nav-log.webp'%}" alt="logo-img"></a>
+                        <h1 class="main__logo--title"><a class="main__logo--link" href="index.html"><img class="main__logo--img" src="{% static 'assets/img/logo/nav-log.webp' %}" alt="logo-img"></a></h1>
                     </div>
                     <div class="header__menu d-none d-lg-block">
                         <nav class="header__menu--navigation">
                             <ul class="d-flex">
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="{% url 'index'%}">Home <span class="menu__plus--icon">+</span></a>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="index.html">Home <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="index.html" class="header__sub--menu__link">Home One</a></li>
                                         <li class="header__sub--menu__items"><a href="index-2.html" class="header__sub--menu__link">Home Two</a></li>
                                         <li class="header__sub--menu__items"><a href="index-3.html" class="header__sub--menu__link">Home Three</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items mega__menu--items style3">
+                                <li class="header__menu--items mega__menu--items">
                                     <a class="header__menu--link" href="shop.html">Shop <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__mega--menu d-flex">
                                         <li class="header__mega--menu__li">
@@ -138,10 +142,10 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="about.html">About US </a>  
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'about'%}">About US </a>  
                                 </li>
-                                <li class="header__menu--items style3">
+                                <li class="header__menu--items">
                                     <a class="header__menu--link" href="blog.html">Blog <span class="menu__plus--icon">+</span> </a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="blog.html" class="header__sub--menu__link">Blog Grid</a></li>
@@ -150,11 +154,11 @@
                                         <li class="header__sub--menu__items"><a href="blog-right-sidebar.html" class="header__sub--menu__link">Blog Right Sidebar</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items style3">
+                                <li class="header__menu--items">
                                     <a class="header__menu--link " href="#">Pages <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
-                                        <li class="header__sub--menu__items"><a href="about.html" class="header__sub--menu__link">About Us</a></li>
-                                        <li class="header__sub--menu__items"><a href="contact.html" class="header__sub--menu__link">Contact Us</a></li>
+                                        <li class="header__sub--menu__items"><a href="{% url 'about'%}" class="header__sub--menu__link">About Us</a></li>
+                                        <li class="header__sub--menu__items"><a href="{% url 'contact' %}" class="header__sub--menu__link">Contact Us</a></li>
                                         <li class="header__sub--menu__items"><a href="cart.html" class="header__sub--menu__link">Cart Page</a></li>
                                         <li class="header__sub--menu__items"><a href="portfolio.html" class="header__sub--menu__link">Portfolio Page</a></li>
                                         <li class="header__sub--menu__items"><a href="wishlist.html" class="header__sub--menu__link">Wishlist Page</a></li>
@@ -162,15 +166,15 @@
                                         <li class="header__sub--menu__items"><a href="404.html" class="header__sub--menu__link">Error Page</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="contact.html">Contact </a>  
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'contact'%}">Contact </a>  
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="header__account">
                         <ul class="d-flex">
-                            <li class="header__account--items  header__account--search__items">
+                            <li class="header__account--items  header__account--search__items d-md-none">
                                 <a class="header__account--btn search__open--btn" href="javascript:void(0)">
                                     <svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>  
                                     <span class="visually-hidden">Search</span>
@@ -182,12 +186,12 @@
                                     <span class="visually-hidden">My Account</span>
                                 </a>
                             </li>
-                            <li class="header__account--items d-sm-none">
+                            <li class="header__account--items d-md-none">
                                 <a class="header__account--btn" href="wishlist.html">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24.526" height="21.82" viewBox="0 0 24.526 21.82">
                                         <path  d="M12.263,21.82a1.438,1.438,0,0,1-.948-.356c-.991-.866-1.946-1.681-2.789-2.4l0,0a51.865,51.865,0,0,1-6.089-5.715A9.129,9.129,0,0,1,0,7.371,7.666,7.666,0,0,1,1.946,2.135,6.6,6.6,0,0,1,6.852,0a6.169,6.169,0,0,1,3.854,1.33,7.884,7.884,0,0,1,1.558,1.627A7.885,7.885,0,0,1,13.821,1.33,6.169,6.169,0,0,1,17.675,0,6.6,6.6,0,0,1,22.58,2.135a7.665,7.665,0,0,1,1.945,5.235,9.128,9.128,0,0,1-2.432,5.975,51.86,51.86,0,0,1-6.089,5.715c-.844.719-1.8,1.535-2.794,2.4a1.439,1.439,0,0,1-.948.356ZM6.852,1.437A5.174,5.174,0,0,0,3,3.109,6.236,6.236,0,0,0,1.437,7.371a7.681,7.681,0,0,0,2.1,5.059,51.039,51.039,0,0,0,5.915,5.539l0,0c.846.721,1.8,1.538,2.8,2.411,1-.874,1.965-1.693,2.812-2.415a51.052,51.052,0,0,0,5.914-5.538,7.682,7.682,0,0,0,2.1-5.059,6.236,6.236,0,0,0-1.565-4.262,5.174,5.174,0,0,0-3.85-1.672A4.765,4.765,0,0,0,14.7,2.467a6.971,6.971,0,0,0-1.658,1.918.907.907,0,0,1-1.558,0A6.965,6.965,0,0,0,9.826,2.467a4.765,4.765,0,0,0-2.975-1.03Zm0,0" transform="translate(0 0)" fill="currentColor"/>
                                     </svg>
-                                    
+                                      
                                     <span class="items__count wishlist">02</span> 
                                 </a>
                             </li>
@@ -204,6 +208,8 @@
                 </div>
             </div>
         </div>
+        <!-- End main header -->
+
         <!-- Start Offcanvas header menu -->
         <div class="offcanvas__header" tabindex="-1">
             <div class="offcanvas__inner">
@@ -304,7 +310,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="offcanvas__language--switcher" href="#">
-                                    <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp'%}" alt="currency">
+                                    <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp' %}" alt="currency">
                                     <span>English</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -320,7 +326,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="offcanvas__account--currency__menu" href="#">
-                                    <img src="{% static 'assets/img/icon/usd-icon.webp'%}" alt="currency">
+                                    <img src="{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
                                     <span>$ US Dollar</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -409,7 +415,7 @@
             <div class="minicart__product">
                 <div class="minicart__product--items d-flex">
                     <div class="minicart__thumbnail">
-                        <a href="product-details.html"><img src="{% static 'assets/img/product/product1.webp'%}" alt="prduct-img"></a>
+                        <a href="product-details.html"><img src="{% static 'assets/img/product/product1.webp' %}" alt="prduct-img"></a>
                     </div>
                     <div class="minicart__text">
                         <h4 class="minicart__subtitle"><a href="product-details.html">The is Garden Vegetable.</a></h4>
@@ -432,7 +438,7 @@
                 </div>
                 <div class="minicart__product--items d-flex">
                     <div class="minicart__thumbnail">
-                        <a href="product-details.html"><img src="{% static 'assets/img/product/product2.webp'%}" alt="prduct-img"></a>
+                        <a href="product-details.html"><img src="{% static 'assets/img/product/product2.webp' %}" alt="prduct-img"></a>
                     </div>
                     <div class="minicart__text">
                         <h4 class="minicart__subtitle"><a href="product-details.html">Fresh Tomatoe is organic.</a></h4>
@@ -480,7 +486,6 @@
             <div class="predictive__search--box__inner">
                 <h2 class="predictive__search--title">Search Products</h2>
                 <form class="predictive__search--form" action="#">
-                    
                     <label>
                         <input class="predictive__search--input" placeholder="Search Here" type="text">
                     </label>

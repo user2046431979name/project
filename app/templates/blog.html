@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -6,18 +7,18 @@
   <title>Furea - Blog Grid</title>
   <meta name="description" content="Morden Bootstrap HTML5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico'%}">
     
    <!-- ======= All CSS Plugins here ======== -->
-  <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/glightbox.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css'%}">
+  <link rel="stylesheet" href="{% static 'assets/css/plugins/glightbox.min.css'%}">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   
   <!-- Plugin css -->
-  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap.min.css'%}">
   
   <!-- Custom Style CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css'%}">
 </head>
 
 <body>
@@ -34,7 +35,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="account__currency--link text-white" href="#">
-                                    <img src="assets/img/icon/usd-icon.webp" alt="currency">
+                                    <img src="{% static 'assets/img/icon/usd-icon.webp'%}'%}" alt="currency">
                                     <span>Currency</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -51,7 +52,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="language__switcher text-white" href="#">
-                                    <img class="language__switcher--icon__img" src="assets/img/icon/language-icon.webp" alt="currency">
+                                    <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp'%}%}" alt="currency">
                                     <span>Language</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -80,7 +81,7 @@
                         </a>
                     </div>
                     <div class="main__logo">
-                        <a class="main__logo--link" href="index.html"><img class="main__logo--img" src="assets/img/logo/nav-log.webp" alt="logo-img"></a>
+                        <a class="main__logo--link" href="index.html"><img class="main__logo--img" src="{% static 'assets/img/logo/nav-log.webp'%}%}" alt="logo-img"></a>
                     </div>
                     <div class="header__menu d-none d-lg-block">
                         <nav class="header__menu--navigation">
@@ -209,7 +210,7 @@
             <div class="offcanvas__inner">
                 <div class="offcanvas__logo">
                     <a class="offcanvas__logo_link" href="index.html">
-                        <img src="assets/img/logo/nav-log.webp" alt="Furea Logo">
+                        <img src="{% static 'assets/img/logo/nav-log.webp'%}'%}" alt="Furea Logo">
                     </a>
                     <button class="offcanvas__close--btn" aria-label="offcanvas close btn">close</button>
                 </div>
@@ -304,7 +305,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="offcanvas__language--switcher" href="#">
-                                    <img class="language__switcher--icon__img" src="assets/img/icon/language-icon.webp" alt="currency">
+                                    <img class="language__switcher--icon__img" src="{% static 'assets/img/icon/language-icon.webp'%}" alt="currency">
                                     <span>English</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -320,7 +321,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="offcanvas__account--currency__menu" href="#">
-                                    <img src="assets/img/icon/usd-icon.webp" alt="currency">
+                                    <img src="{% static 'assets/img/icon/usd-icon.webp'%}" alt="currency">
                                     <span>$ US Dollar</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -409,7 +410,7 @@
             <div class="minicart__product">
                 <div class="minicart__product--items d-flex">
                     <div class="minicart__thumbnail">
-                        <a href="product-details.html"><img src="assets/img/product/product1.webp" alt="prduct-img"></a>
+                        <a href="product-details.html"><img src="{% static 'assets/img/product/product1.webp'%}" alt="prduct-img"></a>
                     </div>
                     <div class="minicart__text">
                         <h4 class="minicart__subtitle"><a href="product-details.html">The is Garden Vegetable.</a></h4>
@@ -432,7 +433,7 @@
                 </div>
                 <div class="minicart__product--items d-flex">
                     <div class="minicart__thumbnail">
-                        <a href="product-details.html"><img src="assets/img/product/product2.webp" alt="prduct-img"></a>
+                        <a href="product-details.html"><img src="{% static 'assets/img/product/product2.webp'%}" alt="prduct-img"></a>
                     </div>
                     <div class="minicart__text">
                         <h4 class="minicart__subtitle"><a href="product-details.html">Fresh Tomatoe is organic.</a></h4>
@@ -522,10 +523,13 @@
                 </div>
                 <div class="blog__section--inner p-0">
                     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1 mb--n30">
+
+                        {% for i in rows%}
                         <div class="col mb-30">
                             <div class="blog__items">
                                 <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog5.webp" alt="blog-img"></a>
+                                    <a class="blog__thumbnail--link display-block" href="blog-details.html">
+                                        <img class="blog__thumbnail--img display-block" src="{{i.image.url}}" alt="blog-img"></a>
                                 </div>
                                 <div class="blog__content">
                                     <ul class="blog__content--meta d-flex">
@@ -533,163 +537,25 @@
                                             <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="11.001" height="11.001" viewBox="0 0 11.001 11.001">
                                                 <path  data-name="Icon awesome-user-circle" d="M5.5.313a5.5,5.5,0,1,0,5.5,5.5A5.5,5.5,0,0,0,5.5.313Zm0,2.129A1.952,1.952,0,1,1,3.549,4.394,1.952,1.952,0,0,1,5.5,2.442Zm0,7.63A4.25,4.25,0,0,1,2.251,8.559,2.473,2.473,0,0,1,4.436,7.232a.543.543,0,0,1,.157.024A2.937,2.937,0,0,0,5.5,7.41a2.925,2.925,0,0,0,.907-.153.543.543,0,0,1,.157-.024A2.473,2.473,0,0,1,8.75,8.559,4.25,4.25,0,0,1,5.5,10.071Z" transform="translate(0 -0.313)" fill="currentColor"/>
                                             </svg>
-                                           James Hames
+                                           {{i.author}}
                                         </li>
                                         <li class="blog__content--meta__text">
                                             <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="12.569" height="13.966" viewBox="0 0 12.569 13.966">
                                                 <path  data-name="Icon material-date-range" d="M8.69,9.285h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm1.4-4.888h-.7V3h-1.4V4.4H7.991V3h-1.4V4.4H5.9a1.39,1.39,0,0,0-1.39,1.4L4.5,15.569a1.4,1.4,0,0,0,1.4,1.4h9.776a1.4,1.4,0,0,0,1.4-1.4V5.793A1.4,1.4,0,0,0,15.673,4.4Zm0,11.173H5.9V7.888h9.776Z" transform="translate(-4.5 -3)" fill="currentColor"/>
                                             </svg>
-                                            February 05, 2022
+                                            {{i.created_at}}
                                         </li>
                                     </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">Top 10 Best Furniture Company
-                                        History you Should Know</a></h3>
-                                    <p class="blog__content--desc">Mum ut perspiciatis unde omnis iste
-                                        natus error sit voluptatem…..</p>
+                                    <h3 class="blog__content--title h4"><a href="blog-details.html">{{i.title}}</a></h3>
+                                    <p class="blog__content--desc">{{i.text}}</p>
                                     <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col mb-30">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog6.webp" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <ul class="blog__content--meta d-flex">
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="11.001" height="11.001" viewBox="0 0 11.001 11.001">
-                                                <path  data-name="Icon awesome-user-circle" d="M5.5.313a5.5,5.5,0,1,0,5.5,5.5A5.5,5.5,0,0,0,5.5.313Zm0,2.129A1.952,1.952,0,1,1,3.549,4.394,1.952,1.952,0,0,1,5.5,2.442Zm0,7.63A4.25,4.25,0,0,1,2.251,8.559,2.473,2.473,0,0,1,4.436,7.232a.543.543,0,0,1,.157.024A2.937,2.937,0,0,0,5.5,7.41a2.925,2.925,0,0,0,.907-.153.543.543,0,0,1,.157-.024A2.473,2.473,0,0,1,8.75,8.559,4.25,4.25,0,0,1,5.5,10.071Z" transform="translate(0 -0.313)" fill="currentColor"/>
-                                            </svg>
-                                           James Hames
-                                        </li>
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="12.569" height="13.966" viewBox="0 0 12.569 13.966">
-                                                <path  data-name="Icon material-date-range" d="M8.69,9.285h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm1.4-4.888h-.7V3h-1.4V4.4H7.991V3h-1.4V4.4H5.9a1.39,1.39,0,0,0-1.39,1.4L4.5,15.569a1.4,1.4,0,0,0,1.4,1.4h9.776a1.4,1.4,0,0,0,1.4-1.4V5.793A1.4,1.4,0,0,0,15.673,4.4Zm0,11.173H5.9V7.888h9.776Z" transform="translate(-4.5 -3)" fill="currentColor"/>
-                                            </svg>
-                                            February 05, 2022
-                                        </li>
-                                    </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">Top 10 Best Furniture Company
-                                        History you Should Know</a></h3>
-                                    <p class="blog__content--desc">Mum ut perspiciatis unde omnis iste
-                                        natus error sit voluptatem…..</p>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-30">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog7.webp" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <ul class="blog__content--meta d-flex">
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="11.001" height="11.001" viewBox="0 0 11.001 11.001">
-                                                <path  data-name="Icon awesome-user-circle" d="M5.5.313a5.5,5.5,0,1,0,5.5,5.5A5.5,5.5,0,0,0,5.5.313Zm0,2.129A1.952,1.952,0,1,1,3.549,4.394,1.952,1.952,0,0,1,5.5,2.442Zm0,7.63A4.25,4.25,0,0,1,2.251,8.559,2.473,2.473,0,0,1,4.436,7.232a.543.543,0,0,1,.157.024A2.937,2.937,0,0,0,5.5,7.41a2.925,2.925,0,0,0,.907-.153.543.543,0,0,1,.157-.024A2.473,2.473,0,0,1,8.75,8.559,4.25,4.25,0,0,1,5.5,10.071Z" transform="translate(0 -0.313)" fill="currentColor"/>
-                                            </svg>
-                                           James Hames
-                                        </li>
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="12.569" height="13.966" viewBox="0 0 12.569 13.966">
-                                                <path  data-name="Icon material-date-range" d="M8.69,9.285h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm1.4-4.888h-.7V3h-1.4V4.4H7.991V3h-1.4V4.4H5.9a1.39,1.39,0,0,0-1.39,1.4L4.5,15.569a1.4,1.4,0,0,0,1.4,1.4h9.776a1.4,1.4,0,0,0,1.4-1.4V5.793A1.4,1.4,0,0,0,15.673,4.4Zm0,11.173H5.9V7.888h9.776Z" transform="translate(-4.5 -3)" fill="currentColor"/>
-                                            </svg>
-                                            February 05, 2022
-                                        </li>
-                                    </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">Top 10 Best Furniture Company
-                                        History you Should Know</a></h3>
-                                    <p class="blog__content--desc">Mum ut perspiciatis unde omnis iste
-                                        natus error sit voluptatem…..</p>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-30">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog8.webp" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <ul class="blog__content--meta d-flex">
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="11.001" height="11.001" viewBox="0 0 11.001 11.001">
-                                                <path  data-name="Icon awesome-user-circle" d="M5.5.313a5.5,5.5,0,1,0,5.5,5.5A5.5,5.5,0,0,0,5.5.313Zm0,2.129A1.952,1.952,0,1,1,3.549,4.394,1.952,1.952,0,0,1,5.5,2.442Zm0,7.63A4.25,4.25,0,0,1,2.251,8.559,2.473,2.473,0,0,1,4.436,7.232a.543.543,0,0,1,.157.024A2.937,2.937,0,0,0,5.5,7.41a2.925,2.925,0,0,0,.907-.153.543.543,0,0,1,.157-.024A2.473,2.473,0,0,1,8.75,8.559,4.25,4.25,0,0,1,5.5,10.071Z" transform="translate(0 -0.313)" fill="currentColor"/>
-                                            </svg>
-                                           James Hames
-                                        </li>
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="12.569" height="13.966" viewBox="0 0 12.569 13.966">
-                                                <path  data-name="Icon material-date-range" d="M8.69,9.285h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm1.4-4.888h-.7V3h-1.4V4.4H7.991V3h-1.4V4.4H5.9a1.39,1.39,0,0,0-1.39,1.4L4.5,15.569a1.4,1.4,0,0,0,1.4,1.4h9.776a1.4,1.4,0,0,0,1.4-1.4V5.793A1.4,1.4,0,0,0,15.673,4.4Zm0,11.173H5.9V7.888h9.776Z" transform="translate(-4.5 -3)" fill="currentColor"/>
-                                            </svg>
-                                            February 05, 2022
-                                        </li>
-                                    </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">Top 10 Best Furniture Company
-                                        History you Should Know</a></h3>
-                                    <p class="blog__content--desc">Mum ut perspiciatis unde omnis iste
-                                        natus error sit voluptatem…..</p>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-30">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog9.webp" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <ul class="blog__content--meta d-flex">
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="11.001" height="11.001" viewBox="0 0 11.001 11.001">
-                                                <path  data-name="Icon awesome-user-circle" d="M5.5.313a5.5,5.5,0,1,0,5.5,5.5A5.5,5.5,0,0,0,5.5.313Zm0,2.129A1.952,1.952,0,1,1,3.549,4.394,1.952,1.952,0,0,1,5.5,2.442Zm0,7.63A4.25,4.25,0,0,1,2.251,8.559,2.473,2.473,0,0,1,4.436,7.232a.543.543,0,0,1,.157.024A2.937,2.937,0,0,0,5.5,7.41a2.925,2.925,0,0,0,.907-.153.543.543,0,0,1,.157-.024A2.473,2.473,0,0,1,8.75,8.559,4.25,4.25,0,0,1,5.5,10.071Z" transform="translate(0 -0.313)" fill="currentColor"/>
-                                            </svg>
-                                           James Hames
-                                        </li>
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="12.569" height="13.966" viewBox="0 0 12.569 13.966">
-                                                <path  data-name="Icon material-date-range" d="M8.69,9.285h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm1.4-4.888h-.7V3h-1.4V4.4H7.991V3h-1.4V4.4H5.9a1.39,1.39,0,0,0-1.39,1.4L4.5,15.569a1.4,1.4,0,0,0,1.4,1.4h9.776a1.4,1.4,0,0,0,1.4-1.4V5.793A1.4,1.4,0,0,0,15.673,4.4Zm0,11.173H5.9V7.888h9.776Z" transform="translate(-4.5 -3)" fill="currentColor"/>
-                                            </svg>
-                                            February 05, 2022
-                                        </li>
-                                    </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">Top 10 Best Furniture Company
-                                        History you Should Know</a></h3>
-                                    <p class="blog__content--desc">Mum ut perspiciatis unde omnis iste
-                                        natus error sit voluptatem…..</p>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col mb-30">
-                            <div class="blog__items">
-                                <div class="blog__thumbnail">
-                                    <a class="blog__thumbnail--link display-block" href="blog-details.html"><img class="blog__thumbnail--img display-block" src="assets/img/blog/blog10.webp" alt="blog-img"></a>
-                                </div>
-                                <div class="blog__content">
-                                    <ul class="blog__content--meta d-flex">
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="11.001" height="11.001" viewBox="0 0 11.001 11.001">
-                                                <path  data-name="Icon awesome-user-circle" d="M5.5.313a5.5,5.5,0,1,0,5.5,5.5A5.5,5.5,0,0,0,5.5.313Zm0,2.129A1.952,1.952,0,1,1,3.549,4.394,1.952,1.952,0,0,1,5.5,2.442Zm0,7.63A4.25,4.25,0,0,1,2.251,8.559,2.473,2.473,0,0,1,4.436,7.232a.543.543,0,0,1,.157.024A2.937,2.937,0,0,0,5.5,7.41a2.925,2.925,0,0,0,.907-.153.543.543,0,0,1,.157-.024A2.473,2.473,0,0,1,8.75,8.559,4.25,4.25,0,0,1,5.5,10.071Z" transform="translate(0 -0.313)" fill="currentColor"/>
-                                            </svg>
-                                           James Hames
-                                        </li>
-                                        <li class="blog__content--meta__text">
-                                            <svg class="blog__content--meta__icon" xmlns="http://www.w3.org/2000/svg" width="12.569" height="13.966" viewBox="0 0 12.569 13.966">
-                                                <path  data-name="Icon material-date-range" d="M8.69,9.285h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm2.793,0h-1.4v1.4h1.4Zm1.4-4.888h-.7V3h-1.4V4.4H7.991V3h-1.4V4.4H5.9a1.39,1.39,0,0,0-1.39,1.4L4.5,15.569a1.4,1.4,0,0,0,1.4,1.4h9.776a1.4,1.4,0,0,0,1.4-1.4V5.793A1.4,1.4,0,0,0,15.673,4.4Zm0,11.173H5.9V7.888h9.776Z" transform="translate(-4.5 -3)" fill="currentColor"/>
-                                            </svg>
-                                            February 05, 2022
-                                        </li>
-                                    </ul>
-                                    <h3 class="blog__content--title h4"><a href="blog-details.html">Top 10 Best Furniture Company
-                                        History you Should Know</a></h3>
-                                    <p class="blog__content--desc">Mum ut perspiciatis unde omnis iste
-                                        natus error sit voluptatem…..</p>
-                                    <a class="blog__content--btn primary__btn" href="blog-details.html">Read more </a>
-                                </div>
-                            </div>
-                        </div>
+                       {% endfor %}
+
+
+
                     </div>
                     <div class="pagination__area bg__gray--color">
                         <nav class="pagination justify-content-center">
@@ -716,7 +582,7 @@
         <section class="newsletter__banner--section section--padding pt-0">
             <div class="container">
                 <div class="newsletter__banner--thumbnail position__relative">
-                    <img class="newsletter__banner--thumbnail__img" src="assets/img/banner/banner-bg7.webp" alt="newsletter-banner">
+                    <img class="newsletter__banner--thumbnail__img" src="{% static 'assets/img/banner/banner-bg7.webp'%}" alt="newsletter-banner">
                     <div class="newsletter__content newsletter__subscribe">
                         <h5 class="newsletter__content--subtitle text-white">Want to offer regularly ?</h5>
                         <h2 class="newsletter__content--title text-white h3 mb-25">Subscribe Our Newsletter <br>
@@ -751,7 +617,7 @@
                                 </svg>
                             </h2>
                             <div class="footer__widget--inner">
-                                <a class="footer__logo" href="index.html"><img src="assets/img/logo/nav-log.webp" alt="footer-logo"></a>
+                                <a class="footer__logo" href="index.html"><img src="{% static 'assets/img/logo/nav-log.webp'%}" alt="footer-logo"></a>
                                 <p class="footer__widget--desc">Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo.</p>
                                 <div class="footer__social">
                                     <ul class="social__shear d-flex">
@@ -852,7 +718,7 @@
             <div class="footer__bottom d-flex justify-content-between align-items-center">
                 <p class="copyright__content">Copyright © 2022 <a class="copyright__content--link" href="index.html">Furea</a> . All Rights Reserved.Design By Furea</p>
                 <div class="footer__payment text-right">
-                    <img class="footer__payment--visa__card display-block" src="assets/img/other/payment-visa-card.webp" alt="visa-card">
+                    <img class="footer__payment--visa__card display-block" src="{% static 'assets/img/other/payment-visa-card.webp'%}" alt="visa-card">
                 </div>
             </div>
         </div>
@@ -863,13 +729,13 @@
     <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
 
   <!-- All Script JS Plugins here  -->
-  <script src="assets/js/vendor/popper.js" defer="defer"></script>
-  <script src="assets/js/vendor/bootstrap.min.js" defer="defer"></script>
-  <script src="assets/js/plugins/swiper-bundle.min.js" defer="defer"></script>
-  <script src="assets/js/plugins/glightbox.min.js" defer="defer"></script>
+  <script src="{% static 'assets/js/vendor/popper.js'%}" defer="defer"></script>
+  <script src="{% static 'assets/js/vendor/bootstrap.min.js'%}" defer="defer"></script>
+  <script src="{% static 'assets/js/plugins/swiper-bundle.min.js'%}" defer="defer"></script>
+  <script src="{% static 'assets/js/plugins/glightbox.min.js'%}" defer="defer"></script>
 
   <!-- Customscript js -->
-  <script src="assets/js/script.js" defer="defer"></script>
+  <script src="{% static 'assets/js/script.js'%}" defer="defer"></script>
   
 </body>
 </html>

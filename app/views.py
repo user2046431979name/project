@@ -5,9 +5,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 
-class index(ListView):
-    template_name = 'index.html'
-
+def index(request):
+    return render(request,'index.html')
 
 
 
@@ -17,3 +16,19 @@ class contact(CreateView):
     fields = ['firstname', 'lastname', 'number','email','message']
 
 
+def about(request):
+    workers = Workers.objects.all()
+    reviews = Reviews.objects.all()[:8]
+    context = {
+        'workers':workers,
+        'reviews':reviews
+    }
+    return render(request,'about.html',context)
+def blog(request):
+    rows = Blogs.objects.all()
+    
+    
+    context = {
+        'rows':rows
+    }
+    return render(request,'blog.html',context)
