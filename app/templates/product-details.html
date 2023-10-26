@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 
@@ -6,26 +7,27 @@
   <title>Furea - Product Details</title>
   <meta name="description" content="Morden Bootstrap HTML5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.ico">
     
    <!-- ======= All CSS Plugins here ======== -->
-  <link rel="stylesheet" href="assets/css/plugins/swiper-bundle.min.css">
-  <link rel="stylesheet" href="assets/css/plugins/glightbox.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/plugins/swiper-bundle.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/plugins/glightbox.min.css' %}">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
   
   <!-- Plugin css -->
-  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'assets/css/vendor/bootstrap.min.css' %}">
   
   <!-- Custom Style CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
 
 <body>
 
-   <!-- Start header area -->
-   <header class="header__section header__others border-bottom header__transparent mb-30">
+    <!-- Start header area -->
+    <header class="header__section header__transparent">
+        <!-- Start Header topbar -->
         <div class="header__topbar bg__primary">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="header__topbar--inner d-flex align-items-center justify-content-between">
                     <div class="header__shipping">
                         <p class="header__shipping--text text-white">Get Up To 80% off In your first Offer!</p>
@@ -34,7 +36,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="account__currency--link text-white" href="#">
-                                    <img src="assets/img/icon/usd-icon.webp" alt="currency">
+                                    <img src= "{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
                                     <span>Currency</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -51,7 +53,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="language__switcher text-white" href="#">
-                                    <img class="language__switcher--icon__img" src="assets/img/icon/language-icon.webp" alt="currency">
+                                    <img class="language__switcher--icon__img" src= "{% static 'assets/img/icon/language-icon.webp' %}" alt="currency">
                                     <span>Language</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -70,8 +72,11 @@
                 </div>
             </div>
         </div>
+        <!-- Start Header topbar -->
+
+        <!-- Start main header -->
         <div class="main__header header__sticky">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="main__header--inner position__relative d-flex justify-content-between align-items-center">
                     <div class="offcanvas__header--menu__open ">
                         <a class="offcanvas__header--menu__open--btn" href="javascript:void(0)">
@@ -80,21 +85,21 @@
                         </a>
                     </div>
                     <div class="main__logo">
-                        <a class="main__logo--link" href="index.html"><img class="main__logo--img" src="assets/img/logo/nav-log.webp" alt="logo-img"></a>
+                        <h1 class="main__logo--title"><a class="main__logo--link" href="{% url 'index'%}"><img class="main__logo--img" src= "{% static 'assets/img/logo/nav-log.webp' %}" alt="logo-img"></a></h1>
                     </div>
                     <div class="header__menu d-none d-lg-block">
                         <nav class="header__menu--navigation">
                             <ul class="d-flex">
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="index.html">Home <span class="menu__plus--icon">+</span></a>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'index' %}">Home <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="index.html" class="header__sub--menu__link">Home One</a></li>
                                         <li class="header__sub--menu__items"><a href="index-2.html" class="header__sub--menu__link">Home Two</a></li>
                                         <li class="header__sub--menu__items"><a href="index-3.html" class="header__sub--menu__link">Home Three</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items mega__menu--items style3">
-                                    <a class="header__menu--link" href="shop.html">Shop <span class="menu__plus--icon">+</span></a>
+                                <li class="header__menu--items mega__menu--items">
+                                    <a class="header__menu--link" href="{% url 'shopPage'%}">Shop <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__mega--menu d-flex">
                                         <li class="header__mega--menu__li">
                                             <span class="header__mega--subtitle">Column One</span>
@@ -138,11 +143,11 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="about.html">About US </a>  
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'about' %}">About US </a>  
                                 </li>
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="blog.html">Blog <span class="menu__plus--icon">+</span> </a>
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'blog' %}">Blog <span class="menu__plus--icon">+</span> </a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="blog.html" class="header__sub--menu__link">Blog Grid</a></li>
                                         <li class="header__sub--menu__items"><a href="blog-details.html" class="header__sub--menu__link">Blog Details</a></li>
@@ -150,7 +155,7 @@
                                         <li class="header__sub--menu__items"><a href="blog-right-sidebar.html" class="header__sub--menu__link">Blog Right Sidebar</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items style3">
+                                <li class="header__menu--items">
                                     <a class="header__menu--link " href="#">Pages <span class="menu__plus--icon">+</span></a>
                                     <ul class="header__sub--menu">
                                         <li class="header__sub--menu__items"><a href="about.html" class="header__sub--menu__link">About Us</a></li>
@@ -162,15 +167,15 @@
                                         <li class="header__sub--menu__items"><a href="404.html" class="header__sub--menu__link">Error Page</a></li>
                                     </ul>
                                 </li>
-                                <li class="header__menu--items style3">
-                                    <a class="header__menu--link" href="contact.html">Contact </a>  
+                                <li class="header__menu--items">
+                                    <a class="header__menu--link" href="{% url 'contact' %}">Contact </a>  
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     <div class="header__account">
                         <ul class="d-flex">
-                            <li class="header__account--items  header__account--search__items">
+                            <li class="header__account--items  header__account--search__items d-md-none">
                                 <a class="header__account--btn search__open--btn" href="javascript:void(0)">
                                     <svg class="header__search--button__svg" xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"/></svg>  
                                     <span class="visually-hidden">Search</span>
@@ -182,12 +187,12 @@
                                     <span class="visually-hidden">My Account</span>
                                 </a>
                             </li>
-                            <li class="header__account--items d-sm-none">
+                            <li class="header__account--items d-md-none">
                                 <a class="header__account--btn" href="wishlist.html">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24.526" height="21.82" viewBox="0 0 24.526 21.82">
                                         <path  d="M12.263,21.82a1.438,1.438,0,0,1-.948-.356c-.991-.866-1.946-1.681-2.789-2.4l0,0a51.865,51.865,0,0,1-6.089-5.715A9.129,9.129,0,0,1,0,7.371,7.666,7.666,0,0,1,1.946,2.135,6.6,6.6,0,0,1,6.852,0a6.169,6.169,0,0,1,3.854,1.33,7.884,7.884,0,0,1,1.558,1.627A7.885,7.885,0,0,1,13.821,1.33,6.169,6.169,0,0,1,17.675,0,6.6,6.6,0,0,1,22.58,2.135a7.665,7.665,0,0,1,1.945,5.235,9.128,9.128,0,0,1-2.432,5.975,51.86,51.86,0,0,1-6.089,5.715c-.844.719-1.8,1.535-2.794,2.4a1.439,1.439,0,0,1-.948.356ZM6.852,1.437A5.174,5.174,0,0,0,3,3.109,6.236,6.236,0,0,0,1.437,7.371a7.681,7.681,0,0,0,2.1,5.059,51.039,51.039,0,0,0,5.915,5.539l0,0c.846.721,1.8,1.538,2.8,2.411,1-.874,1.965-1.693,2.812-2.415a51.052,51.052,0,0,0,5.914-5.538,7.682,7.682,0,0,0,2.1-5.059,6.236,6.236,0,0,0-1.565-4.262,5.174,5.174,0,0,0-3.85-1.672A4.765,4.765,0,0,0,14.7,2.467a6.971,6.971,0,0,0-1.658,1.918.907.907,0,0,1-1.558,0A6.965,6.965,0,0,0,9.826,2.467a4.765,4.765,0,0,0-2.975-1.03Zm0,0" transform="translate(0 0)" fill="currentColor"/>
                                     </svg>
-                                    
+                                      
                                     <span class="items__count wishlist">02</span> 
                                 </a>
                             </li>
@@ -204,12 +209,14 @@
                 </div>
             </div>
         </div>
+        <!-- End main header -->
+
         <!-- Start Offcanvas header menu -->
         <div class="offcanvas__header" tabindex="-1">
             <div class="offcanvas__inner">
                 <div class="offcanvas__logo">
                     <a class="offcanvas__logo_link" href="index.html">
-                        <img src="assets/img/logo/nav-log.webp" alt="Furea Logo">
+                        <img src= "{% static 'assets/img/logo/nav-log.webp' %}" alt="Furea Logo">
                     </a>
                     <button class="offcanvas__close--btn" aria-label="offcanvas close btn">close</button>
                 </div>
@@ -224,7 +231,7 @@
                             </ul>
                         </li>
                         <li class="offcanvas__menu_li">
-                            <a class="offcanvas__menu_item" href="#">Shop</a>
+                            <a class="offcanvas__menu_item" href="{% url 'shopPage' %}">Shop</a>
                             <ul class="offcanvas__sub_menu">
                                 <li class="offcanvas__sub_menu_li">
                                     <a href="#" class="offcanvas__sub_menu_item">Column One</a>
@@ -304,7 +311,7 @@
                         <ul class="d-flex align-items-center">
                             <li class="language__currency--list">
                                 <a class="offcanvas__language--switcher" href="#">
-                                    <img class="language__switcher--icon__img" src="assets/img/icon/language-icon.webp" alt="currency">
+                                    <img class="language__switcher--icon__img" src= "{% static 'assets/img/icon/language-icon.webp' %}" alt="currency">
                                     <span>English</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -320,7 +327,7 @@
                             </li>
                             <li class="language__currency--list">
                                 <a class="offcanvas__account--currency__menu" href="#">
-                                    <img src="assets/img/icon/usd-icon.webp" alt="currency">
+                                    <img src= "{% static 'assets/img/icon/usd-icon.webp' %}" alt="currency">
                                     <span>$ US Dollar</span> 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="11.797" height="9.05" viewBox="0 0 9.797 6.05">
                                         <path  d="M14.646,8.59,10.9,12.329,7.151,8.59,6,9.741l4.9,4.9,4.9-4.9Z" transform="translate(-6 -8.59)" fill="currentColor" opacity="0.7"/>
@@ -409,7 +416,7 @@
             <div class="minicart__product">
                 <div class="minicart__product--items d-flex">
                     <div class="minicart__thumbnail">
-                        <a href="product-details.html"><img src="assets/img/product/product1.webp" alt="prduct-img"></a>
+                        <a href="product-details.html"><img src= "{% static 'assets/img/product/product1.webp' %}" alt="prduct-img"></a>
                     </div>
                     <div class="minicart__text">
                         <h4 class="minicart__subtitle"><a href="product-details.html">The is Garden Vegetable.</a></h4>
@@ -432,7 +439,7 @@
                 </div>
                 <div class="minicart__product--items d-flex">
                     <div class="minicart__thumbnail">
-                        <a href="product-details.html"><img src="assets/img/product/product2.webp" alt="prduct-img"></a>
+                        <a href="product-details.html"><img src= "{% static 'assets/img/product/product2.webp' %}" alt="prduct-img"></a>
                     </div>
                     <div class="minicart__text">
                         <h4 class="minicart__subtitle"><a href="product-details.html">Fresh Tomatoe is organic.</a></h4>
@@ -492,6 +499,7 @@
         </div>
         <!-- End serch box area -->
     </header>
+
     <!-- End header area -->
 
     <main class="main__content_wrapper">
@@ -522,106 +530,44 @@
                         <div class="product__details--media">
                             <div class="product__media--preview  swiper">
                                 <div class="swiper-wrapper">
+                                
                                     <div class="swiper-slide">
                                         <div class="product__media--preview__items">
-                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product1.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product1.webp" alt="product-media-img"></a>
+                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{% static 'assets/img/product/big-product1.webp' %}">
+                                            <img class="product__media--preview__items--img" src="{{row.image.url}}" alt="product-media-img"></a>
                                             <div class="product__media--view__icon">
-                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product1.webp" data-gallery="product-media-preview">
+                                                <a class="product__media--view__icon--link glightbox" href="{% static 'assets/img/product/big-product1.webp' %}" data-gallery="product-media-preview">
                                                     <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
                                                     <span class="visually-hidden">Media Gallery</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
+                                    {% for img in images%}
                                     <div class="swiper-slide">
                                         <div class="product__media--preview__items">
-                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product2.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product2.webp" alt="product-media-img"></a>
+                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="{% static 'assets/img/product/big-product1.webp' %}">
+                                            <img class="product__media--preview__items--img" src="{{img.image.url}}" alt="product-media-img"></a>
                                             <div class="product__media--view__icon">
-                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product2.webp" data-gallery="product-media-preview">
+                                                <a class="product__media--view__icon--link glightbox" href="{% static 'assets/img/product/big-product1.webp' %}" data-gallery="product-media-preview">
                                                     <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
                                                     <span class="visually-hidden">Media Gallery</span>
                                                 </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--preview__items">
-                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product3.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product3.webp" alt="product-media-img"></a>
-                                            <div class="product__media--view__icon">
-                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product3.webp" data-gallery="product-media-preview">
-                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                    <span class="visually-hidden">Media Gallery</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--preview__items">
-                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product4.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product4.webp" alt="product-media-img"></a>
-                                            <div class="product__media--view__icon">
-                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product4.webp" data-gallery="product-media-preview">
-                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                    <span class="visually-hidden">Media Gallery</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--preview__items">
-                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product5.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product5.webp" alt="product-media-img"></a>
-                                            <div class="product__media--view__icon">
-                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product5.webp" data-gallery="product-media-preview">
-                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                    <span class="visually-hidden">Media Gallery</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--preview__items">
-                                            <a class="product__media--preview__items--link glightbox" data-gallery="product-media-preview" href="assets/img/product/big-product6.webp"><img class="product__media--preview__items--img" src="assets/img/product/big-product6.webp" alt="product-media-img"></a>
-                                            <div class="product__media--view__icon">
-                                                <a class="product__media--view__icon--link glightbox" href="assets/img/product/big-product6.webp" data-gallery="product-media-preview">
-                                                    <svg class="product__media--view__icon--svg" xmlns="http://www.w3.org/2000/svg" width="22.51" height="22.443" viewBox="0 0 512 512"><path d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z" fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="32"></path><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M338.29 338.29L448 448"></path></svg>
-                                                    <span class="visually-hidden">Media Gallery</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="product__media--nav swiper">
                                 <div class="swiper-wrapper">
+                                    {% for img in images%}
                                     <div class="swiper-slide">
                                         <div class="product__media--nav__items">
-                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product1.webp" alt="product-nav-img">
+                                            <img class="product__media--nav__items--img" src="{{img.image.url}}" alt="product-nav-img">
                                         </div>
                                     </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--nav__items">
-                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product2.webp" alt="product-nav-img">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--nav__items">
-                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product3.webp" alt="product-nav-img">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--nav__items">
-                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product4.webp" alt="product-nav-img">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--nav__items">
-                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product5.webp" alt="product-nav-img">
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="product__media--nav__items">
-                                            <img class="product__media--nav__items--img" src="assets/img/product/small-product6.webp" alt="product-nav-img">
-                                        </div>
-                                    </div>
+                                    {% endfor %}
                                 </div>
                                 <div class="swiper__nav--btn swiper-button-next"></div>
                                 <div class="swiper__nav--btn swiper-button-prev"></div>
@@ -631,10 +577,10 @@
                     <div class="col">
                         <div class="product__details--info">
                             <form action="#">
-                                <h2 class="product__details--info__title mb-15">Fashion Plastic Chair</h2>
+                                <h2 class="product__details--info__title mb-15">{{row.name}}</h2>
                                 <div class="product__details--info__price mb-10">
-                                    <span class="current__price">$299.00</span>
-                                    <span class="old__price">$320.00</span>
+                                    <span class="current__price">{{row.price}}</span>
+                                   
                                 </div>
                                 <div class="product__details--info__rating d-flex align-items-center mb-15">
                                     <ul class="rating product__list--rating d-flex">
@@ -676,7 +622,8 @@
                                         <li class="rating__list"><span class="rating__list--text">( 5.0)</span></li>
                                     </ul>
                                 </div>
-                                <p class="product__details--info__desc mb-20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut numquam ullam is recusandae laborum explicabo id sequi quisquam, ab sunt deleniti quidem ea animi facilis quod nostrum odit! Repellendus voluptas suscipit.</p>
+                                <p class="product__details--info__desc mb-20">
+                                 {{row.description}}</p>
                                 <div class="product__variant">
                                     <div class="product__variant--list mb-20">
                                         <fieldset class="variant__input--fieldset">
@@ -684,20 +631,9 @@
                                             <div class="variant__color d-flex">
                                                 <div class="variant__color--list">
                                                     <input id="color-red1" name="color" type="radio" checked>
-                                                    <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="assets/img/product/product1.webp" alt="variant-color-img"></label>
+                                                    <label class="variant__color--value red" for="color-red1" title="Red"><img class="variant__color--value__img" src="{% static 'assets/img/product/product1.webp' %}" alt="variant-color-img"></label>
                                                 </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red2" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red2" title="Black"><img class="variant__color--value__img" src="assets/img/product/product6.webp" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red3" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red3" title="Pink"><img class="variant__color--value__img" src="assets/img/product/product7.webp" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red4" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red4" title="Orange"><img class="variant__color--value__img" src="assets/img/product/product4.webp" alt="variant-color-img"></label>
-                                                </div>
+                                              
                                             </div>
                                         </fieldset>
                                     </div>
@@ -707,16 +643,9 @@
                                             <ul class="variant__size d-flex">
                                                 <li class="variant__size--list">
                                                     <input id="weight1" name="weight" type="radio" checked>
-                                                    <label class="variant__size--value red" for="weight1">5 kg</label>
+                                                    <label class="variant__size--value red" for="weight1">{{row.weight}}</label>
                                                 </li>
-                                                <li class="variant__size--list">
-                                                    <input id="weight2" name="weight" type="radio">
-                                                    <label class="variant__size--value red" for="weight2">3 kg</label>
-                                                </li>
-                                                <li class="variant__size--list">
-                                                    <input id="weight3" name="weight" type="radio">
-                                                    <label class="variant__size--value red" for="weight3">2 kg</label>
-                                                </li>
+                                                
                                             </ul>
                                         </fieldset>
                                     </div>
@@ -739,7 +668,7 @@
                                     </div>
                                     <div class="product__variant--list mb-15">
                                         <div class="product__details--info__meta">
-                                            <p class="product__details--info__meta--list"><strong>Barcode:</strong>  <span>565461</span> </p>
+                                            <p class="product__details--info__meta--list"><strong>Barcode:</strong>  <span>{{row.barcode}}</span> </p>
                                             <p class="product__details--info__meta--list"><strong>Sky:</strong>  <span>4420</span> </p>
                                             <p class="product__details--info__meta--list"><strong>Vendor:</strong>  <span>Belo</span> </p>
                                             <p class="product__details--info__meta--list"><strong>Type:</strong>  <span>Sofa</span> </p>
@@ -785,7 +714,7 @@
                                 </div>
                                 <div class="guarantee__safe--checkout">
                                     <h5 class="guarantee__safe--checkout__title">Guaranteed Safe Checkout</h5>
-                                    <img class="guarantee__safe--checkout__img" src="assets/img/other/safe-checkout.webp" alt="Payment Image">
+                                    <img class="guarantee__safe--checkout__img" src="{% static 'assets/img/other/safe-checkout.webp' %}" alt="Payment Image">
                                 </div>
                             </form>
                         </div>
@@ -812,7 +741,7 @@
                                     <div class="product__tab--content">
                                         <div class="product__tab--content__items mb-40 d-flex align-items-center">
                                             <div class="product__tab--content__thumbnail">
-                                                <img class="product__tab--content__thumbnail--img display-block" src="assets/img/product/product1.webp" alt="product-tab">
+                                                <img class="product__tab--content__thumbnail--img display-block" src="{% static 'assets/img/product/product1.webp' %}" alt="product-tab">
                                             </div>
                                             <div class="product__tab--content__right">
                                                 <div class="product__tab--content__step mb-20">
@@ -827,7 +756,7 @@
                                         </div> 
                                         <div class="product__tab--content__items d-flex align-items-center">
                                             <div class="product__tab--content__thumbnail">
-                                                <img class="product__tab--content__thumbnail--img display-block" src="assets/img/product/product2.webp" alt="product-tab">
+                                                <img class="product__tab--content__thumbnail--img display-block" src="{% static 'assets/img/product/product2.webp' %}" alt="product-tab">
                                             </div>
                                             <div class="product__tab--content__right">
                                                 <div class="product__tab--content__step mb-20">
@@ -891,7 +820,7 @@
                                         <div class="reviews__comment--area">
                                             <div class="reviews__comment--list d-flex">
                                                 <div class="reviews__comment--thumbnail">
-                                                    <img src="assets/img/other/comment-thumb1.webp" alt="comment-thumbnail">
+                                                    <img src="{% static 'assets/img/other/comment-thumb1.webp' %}" alt="comment-thumbnail">
                                                 </div>
                                                 <div class="reviews__comment--content">
                                                     <h4 class="reviews__comment--content__title">Richard Smith</h4>
@@ -938,7 +867,7 @@
                                             </div>
                                             <div class="reviews__comment--list margin__left d-flex">
                                                 <div class="reviews__comment--thumbnail">
-                                                    <img src="assets/img/other/comment-thumb2.webp" alt="comment-thumbnail">
+                                                    <img src="{% static 'assets/img/other/comment-thumb2.webp' %}" alt="comment-thumbnail">
                                                 </div>
                                                 <div class="reviews__comment--content">
                                                     <h4 class="reviews__comment--content__title">Laura Johnson</h4>
@@ -985,7 +914,7 @@
                                             </div>
                                             <div class="reviews__comment--list d-flex">
                                                 <div class="reviews__comment--thumbnail">
-                                                    <img src="assets/img/other/comment-thumb3.webp" alt="comment-thumbnail">
+                                                    <img src="{% static 'assets/img/other/comment-thumb3.webp' %}" alt="comment-thumbnail">
                                                 </div>
                                                 <div class="reviews__comment--content">
                                                     <h4 class="reviews__comment--content__title">Richard Smith</h4>
@@ -1156,8 +1085,8 @@
                             <div class="product__items ">
                                 <div class="product__items--thumbnail">
                                     <a class="product__items--link" href="product-details.html">
-                                        <img class="product__items--img product__primary--img" src="assets/img/product/product1.webp" alt="product-img">
-                                        <img class="product__items--img product__secondary--img" src="assets/img/product/product2.webp" alt="product-img">
+                                        <img class="product__items--img product__primary--img" src="{% static 'assets/img/product/product1.webp' %}" alt="product-img">
+                                        <img class="product__items--img product__secondary--img" src="{% static 'assets/img/product/product2.webp' %}" alt="product-img">
                                     </a>
                                     <div class="product__badge">
                                         <span class="product__badge--items sale">New</span>
@@ -1216,8 +1145,8 @@
                             <div class="product__items ">
                                 <div class="product__items--thumbnail">
                                     <a class="product__items--link" href="product-details.html">
-                                        <img class="product__items--img product__primary--img" src="assets/img/product/product3.webp" alt="product-img">
-                                        <img class="product__items--img product__secondary--img" src="assets/img/product/product4.webp" alt="product-img">
+                                        <img class="product__items--img product__primary--img" src="{% static 'assets/img/product/product3.webp' %}" alt="product-img">
+                                        <img class="product__items--img product__secondary--img" src="{% static 'assets/img/product/product4.webp' %}" alt="product-img">
                                     </a>
                                     <ul class="product__items--action d-flex justify-content-center">
                                         <li class="product__items--action__list">
@@ -1273,8 +1202,8 @@
                             <div class="product__items ">
                                 <div class="product__items--thumbnail">
                                     <a class="product__items--link" href="product-details.html">
-                                        <img class="product__items--img product__primary--img" src="assets/img/product/product5.webp" alt="product-img">
-                                        <img class="product__items--img product__secondary--img" src="assets/img/product/product6.webp" alt="product-img">
+                                        <img class="product__items--img product__primary--img" src="{% static 'assets/img/product/product5.webp' %}" alt="product-img">
+                                        <img class="product__items--img product__secondary--img" src="{% static 'assets/img/product/product6.webp' %}" alt="product-img">
                                     </a>
                                     <div class="product__badge">
                                         <span class="product__badge--items sale">New</span>
@@ -1333,8 +1262,8 @@
                             <div class="product__items ">
                                 <div class="product__items--thumbnail">
                                     <a class="product__items--link" href="product-details.html">
-                                        <img class="product__items--img product__primary--img" src="assets/img/product/product7.webp" alt="product-img">
-                                        <img class="product__items--img product__secondary--img" src="assets/img/product/product8.webp" alt="product-img">
+                                        <img class="product__items--img product__primary--img" src="{% static 'assets/img/product/product7.webp' %}" alt="product-img">
+                                        <img class="product__items--img product__secondary--img" src="{% static 'assets/img/product/product8.webp' %}" alt="product-img">
                                     </a>
                                     <ul class="product__items--action d-flex justify-content-center">
                                         <li class="product__items--action__list">
@@ -1390,8 +1319,8 @@
                             <div class="product__items ">
                                 <div class="product__items--thumbnail">
                                     <a class="product__items--link" href="product-details.html">
-                                        <img class="product__items--img product__primary--img" src="assets/img/product/product9.webp" alt="product-img">
-                                        <img class="product__items--img product__secondary--img" src="assets/img/product/product10.webp" alt="product-img">
+                                        <img class="product__items--img product__primary--img" src="{% static 'assets/img/product/product9.webp' %}" alt="product-img">
+                                        <img class="product__items--img product__secondary--img" src="{% static 'assets/img/product/product10.webp' %}" alt="product-img">
                                     </a>
                                     <div class="product__badge">
                                         <span class="product__badge--items sale">New</span>
@@ -1450,8 +1379,8 @@
                             <div class="product__items ">
                                 <div class="product__items--thumbnail">
                                     <a class="product__items--link" href="product-details.html">
-                                        <img class="product__items--img product__primary--img" src="assets/img/product/product11.webp" alt="product-img">
-                                        <img class="product__items--img product__secondary--img" src="assets/img/product/product12.webp" alt="product-img">
+                                        <img class="product__items--img product__primary--img" src="{% static 'assets/img/product/product11.webp' %}" alt="product-img">
+                                        <img class="product__items--img product__secondary--img" src="{% static 'assets/img/product/product12.webp' %}" alt="product-img">
                                     </a>
                                     <ul class="product__items--action d-flex justify-content-center">
                                         <li class="product__items--action__list">
@@ -1515,7 +1444,7 @@
         <section class="newsletter__banner--section section--padding pt-0">
             <div class="container">
                 <div class="newsletter__banner--thumbnail position__relative">
-                    <img class="newsletter__banner--thumbnail__img" src="assets/img/banner/banner-bg7.webp" alt="newsletter-banner">
+                    <img class="newsletter__banner--thumbnail__img" src="{% static 'assets/img/banner/banner-bg7.webp' %}" alt="newsletter-banner">
                     <div class="newsletter__content newsletter__subscribe">
                         <h5 class="newsletter__content--subtitle text-white">Want to offer regularly ?</h5>
                         <h2 class="newsletter__content--title text-white h3 mb-25">Subscribe Our Newsletter <br>
@@ -1550,7 +1479,7 @@
                                 </svg>
                             </h2>
                             <div class="footer__widget--inner">
-                                <a class="footer__logo" href="index.html"><img src="assets/img/logo/nav-log.webp" alt="footer-logo"></a>
+                                <a class="footer__logo" href="index.html"><img src="{% static 'assets/img/logo/nav-log.webp' %}" alt="footer-logo"></a>
                                 <p class="footer__widget--desc">Ut enim ad minim veniam, quis <br> nostrud exercitation ullamco laboris <br> nisi ut aliquip ex ea commodo.</p>
                                 <div class="footer__social">
                                     <ul class="social__shear d-flex">
@@ -1651,7 +1580,7 @@
             <div class="footer__bottom d-flex justify-content-between align-items-center">
                 <p class="copyright__content">Copyright © 2022 <a class="copyright__content--link" href="index.html">Furea</a> . All Rights Reserved.Design By Furea</p>
                 <div class="footer__payment text-right">
-                    <img class="footer__payment--visa__card display-block" src="assets/img/other/payment-visa-card.webp" alt="visa-card">
+                    <img class="footer__payment--visa__card display-block" src="{% static 'assets/img/other/payment-visa-card.webp' %}" alt="visa-card">
                 </div>
             </div>
         </div>
@@ -1671,7 +1600,7 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="quickview__thumbnail">
-                                        <a class="quickview__thumbnail--link" href="product-details.html"><img class="quickview__thumbnail--img" src="assets/img/product/big-product2.webp" alt="product-img"></a>
+                                        <a class="quickview__thumbnail--link" href="product-details.html"><img class="quickview__thumbnail--img" src="{% static 'assets/img/product/big-product2.webp' %}" alt="product-img"></a>
                                         <div class="product__badge">
                                             <span class="product__badge--items sale">Sale</span>
                                         </div>
@@ -1679,7 +1608,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="quickview__thumbnail">
-                                        <a class="quickview__thumbnail--link" href="product-details.html"><img class="quickview__thumbnail--img" src="assets/img/product/big-product3.webp" alt="product-img"></a>
+                                        <a class="quickview__thumbnail--link" href="product-details.html"><img class="quickview__thumbnail--img" src="{% static 'assets/img/product/big-product3.webp' %}" alt="product-img"></a>
                                         <div class="product__badge">
                                             <span class="product__badge--items sale">Sale</span>
                                         </div>
@@ -1687,7 +1616,7 @@
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="quickview__thumbnail">
-                                        <a class="quickview__thumbnail--link" href="product-details.html"><img class="quickview__thumbnail--img" src="assets/img/product/big-product4.webp" alt="product-img"></a>
+                                        <a class="quickview__thumbnail--link" href="product-details.html"><img class="quickview__thumbnail--img" src="{% static 'assets/img/product/big-product4.webp' %}" alt="product-img"></a>
                                         <div class="product__badge">
                                             <span class="product__badge--items sale">Sale</span>
                                         </div>
@@ -1705,7 +1634,7 @@
                                 <h2 class="product__details--info__title mb-10">Oversize Cotton Dress</h2>
                                 <div class="product__details--info__price mb-12">
                                     <span class="current__price">$58.00</span>
-                                    <span class="old__price">$68.00</span>
+                                    
                                 </div>
                                 <div class="quickview__info--ratting d-flex align-items-center mb-10">
                                     <ul class="rating d-flex justify-content-center">
@@ -1755,20 +1684,9 @@
                                             <div class="variant__color d-flex">
                                                 <div class="variant__color--list">
                                                     <input id="color-red5" name="color" type="radio" checked>
-                                                    <label class="variant__color--value red" for="color-red5" title="Red"><img class="variant__color--value__img" src="assets/img/product/product1.webp" alt="variant-color-img"></label>
+                                                    <label class="variant__color--value red" for="color-red5" title="{{row.color}}"><img class="variant__color--value__img" src="{% static 'assets/img/product/product1.webp' %}" alt="variant-color-img"></label>
                                                 </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red6" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red6" title="Black"><img class="variant__color--value__img" src="assets/img/product/product6.webp" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red7" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red7" title="Pink"><img class="variant__color--value__img" src="assets/img/product/product7.webp" alt="variant-color-img"></label>
-                                                </div>
-                                                <div class="variant__color--list">
-                                                    <input id="color-red8" name="color" type="radio">
-                                                    <label class="variant__color--value red" for="color-red8" title="Orange"><img class="variant__color--value__img" src="assets/img/product/product4.webp" alt="variant-color-img"></label>
-                                                </div>
+                                           
                                             </div>
                                         </fieldset>
                                     </div>
@@ -1780,14 +1698,7 @@
                                                     <input id="weight4" name="weight" type="radio" checked>
                                                     <label class="variant__size--value red" for="weight4">5 kg</label>
                                                 </li>
-                                                <li class="variant__size--list">
-                                                    <input id="weight5" name="weight" type="radio">
-                                                    <label class="variant__size--value red" for="weight5">3 kg</label>
-                                                </li>
-                                                <li class="variant__size--list">
-                                                    <input id="weight6" name="weight" type="radio">
-                                                    <label class="variant__size--value red" for="weight6">2 kg</label>
-                                                </li>
+                                              
                                             </ul>
                                         </fieldset>
                                     </div>
@@ -1858,13 +1769,13 @@
     <button id="scroll__top"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M112 244l144-144 144 144M256 120v292"/></svg></button>
 
   <!-- All Script JS Plugins here  -->
-  <script src="assets/js/vendor/popper.js" defer="defer"></script>
-  <script src="assets/js/vendor/bootstrap.min.js" defer="defer"></script>
-  <script src="assets/js/plugins/swiper-bundle.min.js" defer="defer"></script>
-  <script src="assets/js/plugins/glightbox.min.js" defer="defer"></script>
+  <script src="{% static 'assets/js/vendor/popper.js' %}" defer="defer"></script>
+  <script src="{% static 'assets/js/vendor/bootstrap.min.js' %}" defer="defer"></script>
+  <script src="{% static 'assets/js/plugins/swiper-bundle.min.js' %}" defer="defer"></script>
+  <script src="{% static 'assets/js/plugins/glightbox.min.js' %}" defer="defer"></script>
 
   <!-- Customscript js -->
-  <script src="assets/js/script.js" defer="defer"></script>
+  <script src="{% static 'assets/js/script.js' %}" defer="defer"></script>
   
 </body>
-</html>
+</html

@@ -47,4 +47,29 @@ class Blogs(Model):
     author = ForeignKey( settings.AUTH_USER_MODEL,on_delete=CASCADE)
     def __str__(self):
         return self.title
+    
+class Category( Model):
+    name = CharField(max_length=250)
+    image = ImageField(null=True, blank=True)
+    description = CharField(max_length=250)
+class Brands( Model):
+    name =  CharField(max_length=250)
+    image =  ImageField(null=True, blank=True)
+    description =  CharField(max_length=250)
+class Products( Model):
+    name =  CharField(max_length=250)
+    description =  CharField(max_length=250)
+    image =  ImageField()
+    price =  FloatField()
+    color =  CharField(max_length=250)
+    weight =  FloatField()
+    barcode =  CharField(max_length=250)
+    categoryObject =  ForeignKey(Category, on_delete= CASCADE)
+    brandObject =  ForeignKey(Brands, on_delete= CASCADE)
+    
+  
+    
+class ProductsImages( Model):
+    productObject =  ForeignKey(Products, on_delete= CASCADE)
+    image =  ImageField()
 

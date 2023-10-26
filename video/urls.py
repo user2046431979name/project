@@ -5,10 +5,13 @@ from django.conf import settings
 from app.views import * 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',index,name='index'),
+    path('',Index.as_view(),name='index'),
     path('contact/',contact.as_view(),name='contact'),
     path('about/',about,name='about'),
     path('blog/',blog,name='blog'),
+    path('productdetails/<int:id>',productsDetails,name='productdetails'),
+    path('shop/',shopPage,name='shopPage')
+
 ]
 
 
