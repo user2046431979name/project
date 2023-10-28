@@ -66,8 +66,9 @@ class Products( Model):
     barcode =  CharField(max_length=250)
     categoryObject =  ForeignKey(Category, on_delete= CASCADE)
     brandObject =  ForeignKey(Brands, on_delete= CASCADE)
+    def discount(self):
+        return self.price + self.price * 0.2
     
-  
     
 class ProductsImages( Model):
     productObject =  ForeignKey(Products, on_delete= CASCADE)

@@ -75,15 +75,14 @@ def shopPage(request):
     paginator = Paginator(products,2)
     next_page = page + 1 if (page) < len(paginator.page_range) else 1
     previos_page = page - 1 if (page - 1) != 0 else page
-    old_price = Products.objects.annotate(old_price=F('price') + F('price') * 0.2)
-   
+    
     
     context = {
         'products':paginator.page(page),
         'page':paginator.page_range,
         'nextP':next_page,
         'previosP':previos_page,
-        'old_price':old_price    
+        
     }
    
 
