@@ -342,7 +342,7 @@
     </div>
     <!-- End offcanvas filter sidebar -->
     
-er area -->
+
 
 
     <main class="main__content_wrapper">
@@ -373,22 +373,43 @@ er area -->
                         <div class="shop__sidebar--widget widget__area d-md-2-none">
                             <div class="single__widget widget__bg">
                                 <h2 class="widget__title position__relative h3">Search</h2>
-                                <form class="widget__search--form" action="#">
+
+
+
+
+
+
+
+                                <form class="widget__search--form" action="{% url 'shopPage' %}" method="get">
+
                                     <label>
-                                        <input class="widget__search--form__input" placeholder="Search by" type="text">
+                                        <input class="widget__search--form__input" name="search" placeholder="Search by" type="text">
                                     </label>
+
                                     <button class="widget__search--form__btn"  type="submit">
                                         Search 
                                     </button>
+
                                 </form>
+
+
+
+
+
+
+
+
+
+
                             </div>
                             <div class="single__widget widget__bg">
                                 <h2 class="widget__title position__relative h3">Categories</h2>
                                 <ul class="widget__categories--menu">
+                                    {% for i in categories%}
                                     <li class="widget__categories--menu__list">
                                         <label class="widget__categories--menu__label d-flex align-items-center">
                                             <img class="widget__categories--menu__img" src="{% static 'assets/img/product/small-product1.webp' %}" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Denim Jacket</span>
+                                            <span class="widget__categories--menu__text">{{i.name}}</span>
                                             <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
                                                 <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
                                             </svg>
@@ -402,41 +423,6 @@ er area -->
                                             </li>
                                             <li class="widget__categories--sub__menu--list">
                                                 <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product3.webp' %}' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product4.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product5.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="{% static 'assets/img/product/small-product2.webp' %}" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Oversize Cotton</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394" >
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product2.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
                                                     <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product3.webp' %}" alt="categories-img">
                                                     <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
                                                 </a>
@@ -455,122 +441,54 @@ er area -->
                                             </li>
                                         </ul>
                                     </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="{% static 'assets/img/product/small-product3.webp' %}" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Dairy & chesse</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product2.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product3.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product4.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product5.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="{% static 'assets/img/product/small-product4.webp' %}" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Shoulder Bag</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product2.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product3.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product4.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product5.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li class="widget__categories--menu__list">
-                                        <label class="widget__categories--menu__label d-flex align-items-center">
-                                            <img class="widget__categories--menu__img" src="{% static 'assets/img/product/small-product5.webp' %}" alt="categories-img">
-                                            <span class="widget__categories--menu__text">Denim Jacket</span>
-                                            <svg class="widget__categories--menu__arrowdown--icon" xmlns="http://www.w3.org/2000/svg" width="12.355" height="8.394">
-                                                <path  d="M15.138,8.59l-3.961,3.952L7.217,8.59,6,9.807l5.178,5.178,5.178-5.178Z" transform="translate(-6 -8.59)" fill="currentColor"></path>
-                                            </svg>
-                                        </label>
-                                        <ul class="widget__categories--sub__menu">
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product2.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Jacket, Women</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product3.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Woolend Jacket</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product4.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Western denim</span>
-                                                </a>
-                                            </li>
-                                            <li class="widget__categories--sub__menu--list">
-                                                <a class="widget__categories--sub__menu--link d-flex align-items-center" href="shop.html">
-                                                    <img class="widget__categories--sub__menu--img" src="{% static 'assets/img/product/small-product5.webp' %}" alt="categories-img">
-                                                    <span class="widget__categories--sub__menu--text">Mini Dresss</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
                             <div class="single__widget price__filter widget__bg">
                                 <h2 class="widget__title position__relative h3">Filter By Price</h2>
-                                <form class="price__filter--form" action="#"> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <form class="price__filter--form" action="{% url 'shopPage'%}" method="get"> 
                                     <div class="price__filter--form__inner mb-15 d-flex align-items-center">
                                         <div class="price__filter--group">
                                             <label class="price__filter--label" for="Filter-Price-GTE1">From</label>
                                             <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                                 <span class="price__filter--currency">$</span>
-                                                <input class="price__filter--input__field border-0" id="Filter-Price-GTE1" name="filter.v.price.gte" type="number" placeholder="0" min="0" max="250.00">
+                                                <input class="price__filter--input__field border-0" id="Filter-Price-GTE1" 
+                                                name="begin_price" type="number" placeholder="0" min="0">
                                             </div>
                                         </div>
                                         <div class="price__divider">
@@ -580,12 +498,47 @@ er area -->
                                             <label class="price__filter--label" for="Filter-Price-LTE1">To</label>
                                             <div class="price__filter--input border-radius-5 d-flex align-items-center">
                                                 <span class="price__filter--currency">$</span>
-                                                <input class="price__filter--input__field border-0" id="Filter-Price-LTE1" name="filter.v.price.lte" type="number" min="0" placeholder="250.00" max="250.00"> 
+                                                <input class="price__filter--input__field border-0" id="Filter-Price-LTE1"
+                                                 name="end_price" type="number" min="0"> 
                                             </div>	
                                         </div>
                                     </div>
                                     <button class="price__filter--btn primary__btn" type="submit">Filter</button>
                                 </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             </div>
                             <div class="single__widget widget__bg">
                                 <h2 class="widget__title position__relative h3">Dietary Needs</h2>
@@ -691,14 +644,9 @@ er area -->
                             <div class="single__widget widget__bg">
                                 <h2 class="widget__title position__relative h3">Brands</h2>
                                 <ul class="widget__tagcloud">
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Wooden</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Chair</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Modern</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Fabric  </a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Shoulder </a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Winter</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Accessories</a></li>
-                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="shop.html">Dress </a></li>
+                                    {% for i in brands%}
+                                    <li class="widget__tagcloud--list"><a class="widget__tagcloud--link" href="/shop">{{i.name}}</a></li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -722,6 +670,20 @@ er area -->
                                         </select>
                                     </div>
                                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 <div class="product__view--mode__list product__short--by align-items-center d-none d-lg-flex">
                                     <label class="product__view--label">Sort By :</label>
                                     <div class="select shop__header--select">
@@ -733,6 +695,18 @@ er area -->
                                         </select>
                                     </div>
                                 </div>
+
+
+
+
+
+
+
+
+
+
+
+                                
                                 <div class="product__view--mode__list">
                                     <div class="product__grid--column__buttons d-flex justify-content-center">
                                         <button class="product__grid--column__buttons--icons active" data-toggle="tab" aria-label="product grid btn" data-target="#product_grid">
@@ -768,8 +742,22 @@ er area -->
                                     </div>
                                 </div>
                             </div>
-                            <p class="product__showing--count">Showing 1–9 of 21 results</p>
+
+
+
+
+                            <p class="product__showing--count">{{result_count}}</p>
+
+
+
+
+
                         </div>
+
+
+
+
+
                         <div class="shop__product--wrapper">
                             <div class="tab_content">
                                 <div id="product_grid" class="tab_pane active show">
@@ -801,7 +789,7 @@ er area -->
                                                                     <span class="visually-hidden">Wishlist</span>
                                                                 </a>
                                                             </li>
-                                                            <li class="product__items--action__list">
+                                                             <li class="product__items--action__list">
                                                                 <a class="product__items--action__btn" href="compare.html">
                                                                     <svg class="product__items--action__btn--svg" xmlns="http://www.w3.org/2000/svg" width="16.47" height="13.088" viewBox="0 0 15.47 11.088">
                                                                         <g  transform="translate(0 -72.508)">
@@ -824,8 +812,8 @@ er area -->
                                                         </div>
                                                         <h3 class="product__items--content__title h4"><a href="product-details.html">{{i.name}}</a></h3>
                                                         <div class="product__items--price">
-                                                            <span class="current__price">${{i.price}}</span>
-                                                            <span class="old__price">${{i.discount}}</span>
+                                                            <span class="current__price">{{i.price}}$</span>
+                                                            <span class="old__price">{{i.discount}}$</span>
                                                              
                                                         </div>
                                                         <a class="product__items--action__cart--btn primary__btn" href="cart.html">
