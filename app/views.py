@@ -11,6 +11,7 @@ from django.contrib.auth import login,logout
 from django.http import *
 class Index(TemplateView):
     template_name = 'index.html'
+   
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -23,7 +24,19 @@ class Index(TemplateView):
             context["category_data"][category] = products
 
         return context  
-        
+          
+  
+
+
+
+
+
+
+
+
+
+
+
 
 def productsDetails(request,id):
     row = Products.objects.get(id = id)
