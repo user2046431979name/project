@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import *
 from .models import *
 from django.views.generic import ListView,DetailView 
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -41,9 +41,14 @@ class Index(TemplateView):
 def productsDetails(request,id):
     row = Products.objects.get(id = id)
     images = ProductsImages.objects.filter(productObject = row)
+    
+    points = ProductsRaitings.objects.filter(productobject = row).count()
+    likesCount = ProductsLikes.objects.filter(productobject = row).count()
     context = {
         'row':row,
-        'images':images
+        'images':images,
+        'likesCount':likesCount,
+        'points':points,
     }
     return render(request,'product-details.html',context)
 class contact(CreateView):
@@ -124,49 +129,100 @@ def shopPage(request):
 
     return render(request,'shop.html',context)
 
-def like(request,id):
- 
+def pressLike(request,id):
+    row = Products.objects.get(id = id)
+    user = request.user
+    isLiked =  ProductsLikes.objects.filter(productobject = row,author = user).exists()
   
 
     if not(request.user.is_authenticated):
         return  HttpResponseBadRequest("Пользователь не авторизован")
-    
-    row = Products.objects.get(id = id)
-    user = request.user
-    isLiked = ProductsLikes.objects.filter(productobject = row,author = user).exists()
     if not(isLiked):
-        return HttpResponseBadRequest('уже нажимали')
+        return redirect('index')
+  
+   
     ProductsLikes.objects.create(productobject = row,author = user)
     return HttpResponse('успешно',status=200)
 
-def setRaiting(request):
-    if not(request.method == 'POST'):
-        return HttpResponseBadRequest('такой страницы нет')
+def setRating(request):
 
-
-    if not(request.user.is_authenticated):
-        return HttpResponseBadRequest('пользователь не авторизован')
+    # if not (request.method == 'POST'):
+    #     return HttpResponseBadRequest('Такой страницы нет')
     
-
+    if not(request.user.is_authenticated):
+        return HttpResponseBadRequest('Пользователь не авторизован')
+    
     user = request.user
-    points = int(request.POST.get('points')) 
-    id = int(request.POST.get('id'))
-    row = Products.objects.get(id = id)
-    isRaiting = ProductsRaitings.objects.filter(productobject = row,author = user).exists()
-    if not(isRaiting):
-        return HttpResponseBadRequest('уже нажимали')
-    ProductsRaitings.objects.create(productobject = row,author = user,points=points)
-    return HttpResponse('успешно',status=200)
+    
+    points = int(request.GET.get('points'))
+    id = int(request.GET.get('id'))
+
+
+    product = Products.objects.get(id=id)
+
+    isLiked = ProductsRaitings.objects.filter(productobject = product, author = user).exists()
+        
+    if isLiked:
+        row = ProductsRaitings.objects.get(productObject = product, author = user)
+        row.points = points
+        row.save()
+        return HttpResponse("Оценка принята", status = 200)
+    ProductsRaitings.objects.create(productobject = product, author = user, points=points)
+    return HttpResponse("Оценка принята", status = 200)
+
+def getRaiting(request,id):
+    product = Products.objects.get(id = id)
+    points = ProductsRaitings.objects.filter(productobject = product).aggregate(Avg('points'))['points__avg']
+    
+    return JsonResponse({'points':points})
+
+    
+  
+
+def saveMail(request):
+    points = request.POST.get('mail')
+    Subscription.objects.create(mail = points)
+    return redirect('index')
+
+
+def myAccount(request):
+    return render(request,'my-account.html')
+
+
+
+def setCart(request):
 
 
 
 
-def login_view(request):
-    return render(request,'login.html')
 
-def logout_view(request):
-    logout(request)
-    return login_view(request)
+
+    return render(request,'cart.html')
+
+
+def cart(request):
+    user = request.user
+    rows = Cart.objects.filter(author = user)
+    totalPrice = 0
+    for i in rows:
+        totalPrice =+ i.quantity
+
+    context = {
+        'rows':rows,
+        'totalPrice':totalPrice,
+    }
+    return render(request,'cart.html',context)
+
+
+
+
+
+
+
+
+
+
+
 
 
 

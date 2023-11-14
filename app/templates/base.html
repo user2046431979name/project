@@ -208,7 +208,7 @@
                                 </a>
                             </li>
                             <li class="header__account--items">
-                                <a class="header__account--btn" href="my-account.html">
+                                <a class="header__account--btn" href="{% url 'myAccount'%}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26.51" height="23.443" viewBox="0 0 512 512">
                                         <path d="M344 144c-3.92 52.87-44 96-88 96s-84.15-43.12-88-96c-4-55 35-96 88-96s92 42 88 96z" fill="none" 
                                         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32"></path>
@@ -511,7 +511,7 @@
                 <label class="minicart__conditions--label" for="accept">I agree with the <a class="minicart__conditions--link" href="privacy-policy.html">Privacy And Policy</a></label>
             </div>
             <div class="minicart__button d-flex justify-content-center">
-                <a class="primary__btn minicart__button--link" href="cart.html">View cart</a>
+                <a class="primary__btn minicart__button--link" href="{% url 'cart'%}">View cart</a>
                 <a class="primary__btn minicart__button--link" href="checkout.html">Checkout</a>
             </div>
         </div>
@@ -643,10 +643,10 @@
 
 
 
-                                <form class="newsletter__subscribe--form__style position__relative" method="post" action="#">
+                                <form class="newsletter__subscribe--form__style position__relative" method="post" action="{% url 'saveMail'%}">
                                     {% csrf_token %}
                                     <label>
-                                        <input class="footer__newsletter--input newsletter__subscribe--input" name="emailadress" placeholder="Enter your email address" type="email">
+                                        <input class="footer__newsletter--input newsletter__subscribe--input" name="mail" placeholder="Enter your email address" type="email">
                                     </label>
                                     <button class="footer__newsletter--button newsletter__subscribe--button primary__btn" type="submit">Subscribe
                                         <svg class="newsletter__subscribe--button__icon" xmlns="http://www.w3.org/2000/svg" width="9.159" height="7.85" viewBox="0 0 9.159 7.85">
@@ -1002,6 +1002,6 @@
 
   <!-- Customscript js -->
   <script src="{% static 'assets/js/script.js'%}" defer="defer"></script>
-  
+  <script src="{% static 'assets/index.js' %}"></script>
 </body>
 </html>
