@@ -191,16 +191,17 @@ def myAccount(request):
 
 
 def setCart(request):
-
-
-
-
-
-
+        
+    if not(request.user.is_authenticated):
+        return HttpResponseBadRequest('Пользователь не авторизован')
     return render(request,'cart.html')
 
 
 def cart(request):
+        
+    if not(request.user.is_authenticated):
+        return HttpResponseBadRequest('Пользователь не авторизован')
+    
     user = request.user
     rows = Cart.objects.filter(author = user)
     totalPrice = 0
