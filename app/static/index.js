@@ -31,21 +31,49 @@ async function setRating(url, rating, productId){
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken // Получаем CSRF-токен
+            'X-CSRFToken': csrftoken, // Получаем CSRF-токен
         }});
 
     await fetch(`${url}${productId}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRFToken': csrftoken // Получаем CSRF-токен
+            'X-CSRFToken': csrftoken, // Получаем CSRF-токен
         }}) 
         .then(response => response.json())
         .then(data => {
-            //data['points']
-            // Дайте новое значение элементу где хранится рейтинг в html
+            let rating = document.getElementById('rating');
+            rating.innerHTML = `${data['points']}`;
         })
 }
 
 
 
+
+function quantityСhange(operator){
+    let quantityHtml = document.getElementById('quantity');
+    let quantityInt = parseInt(quantityHtml.innerText); 
+    if(operator == 'add'){
+        quantityInt += 1
+    }
+    else if(operator != 'add' && quantityInt <= 1){
+        quantityInt -= 1
+    }
+    quantityHtml.innerHTML = `${quantityInt}`;
+}
+
+function setShoppingCart(url, isProductDetails = false){
+    const csrftoken = getCookie('csrftoken');
+    let quantityInt = 1;
+    if(isProductDetails){
+        let quantityHtml = document.getElementById('quantity');
+        quantityInt = parseInt(quantityHtml.value);   
+    }
+
+    fetch(`${url}?quantity=${quantityInt}`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken, // Получаем CSRF-токен
+        }}) 
+}

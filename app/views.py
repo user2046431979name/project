@@ -11,8 +11,8 @@ from django.contrib.auth import login,logout
 from django.http import *
 class Index(TemplateView):
     template_name = 'index.html'
-   
-
+    
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -146,8 +146,8 @@ def pressLike(request,id):
 
 def setRating(request):
 
-    # if not (request.method == 'POST'):
-    #     return HttpResponseBadRequest('Такой страницы нет')
+    if not (request.method == 'POST'):
+         return HttpResponseBadRequest('Такой страницы нет')
     
     if not(request.user.is_authenticated):
         return HttpResponseBadRequest('Пользователь не авторизован')
@@ -190,20 +190,37 @@ def myAccount(request):
 
 
 
-def setCart(request):
+def setCart(request,id):
         
     if not(request.user.is_authenticated):
         return HttpResponseBadRequest('Пользователь не авторизован')
-    return render(request,'cart.html')
+    user = request.user
+    row = Products.objects.get(id = id)
+    
+    quantity = 1
+    if request.GET.get('quantity'):
+        quantity = int(request.GET.get('quantity'))
 
+
+    isCart = Cart.objects.filter(productObject = row, author = user)  
+    if isCart:
+        cartProduct = Cart.objects.get(id = id)
+     
+        cartProduct.quantity = cartProduct.quantity + 1
+        cartProduct.save()
+    else:
+        Cart.objects.create(author=user,productObject = row,quantity = quantity)
+
+    return cart(request)
 
 def cart(request):
-        
+    user = request.user
     if not(request.user.is_authenticated):
         return HttpResponseBadRequest('Пользователь не авторизован')
     
-    user = request.user
+    
     rows = Cart.objects.filter(author = user)
+    
     totalPrice = 0
     for i in rows:
         totalPrice =+ i.quantity
@@ -213,7 +230,7 @@ def cart(request):
         'totalPrice':totalPrice,
     }
     return render(request,'cart.html',context)
-
+    
 
 
 

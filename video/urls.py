@@ -19,7 +19,9 @@ urlpatterns = [
     path('pressLike/<int:id>',pressLike, name='pressLike'),
     path('setRating/',setRating, name='setRating'),
     path('getRating/<int:id>',getRaiting, name='getRating'),
-    path('cart/',cart, name='cart'),
+    path('cart/',cart, name='shoppingCart'),
+    path('setCart/<int:id>',setCart, name='setCart'),
+
 
 
    

@@ -19,6 +19,7 @@
   
   <!-- Custom Style CSS -->
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  
 </head>
 
 <body>
@@ -649,16 +650,26 @@
                                             </ul>
                                         </fieldset>
                                     </div>
+
+
+
+
+
+
+
                                     <div class="product__variant--list quantity d-flex align-items-center mb-20">
                                         <div class="quantity__box">
-                                            <button type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
-                                            <label>
-                                                <input type="number" class="quantity__number quickview__value--number" value="1" />
+                                            <button onclick="quantityСhange('minus')"  type="button" class="quantity__value quickview__value--quantity decrease" aria-label="quantity value" value="Decrease Value">-</button>
+                                            <label >
+                                                <input type="number" class="quantity__number quickview__value--number" id="quantity"  value="1" />
                                             </label>
-                                            <button type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
+                                            <button onclick="quantityСhange('add')"   type="button" class="quantity__value quickview__value--quantity increase" aria-label="quantity value" value="Increase Value">+</button>
                                         </div>
-                                        <button class="quickview__cart--btn primary__btn" type="submit">Add To Cart</button>  
+                                    <button class="quickview__cart--btn primary__btn" onclick="setShoppingCart(`{% url 'shoppingCart' %}`,true)" type="submit">Add To Cart</button>
                                     </div>
+
+
+
 
 
 
@@ -680,48 +691,7 @@
                                         <!-- Галерея изображений продукта... -->
                                     
                                       </div>
-                                      <script>
-                                        document.getElementById('like-btn').addEventListener('click', async function() {
-                                          const postId = this.getAttribute('data-post-id');
-                                    
-                                          try {
-                                            const response = await fetch(`/like/${postId}/`, { 
-                                              method: 'POST',
-                                              headers: {
-                                                'Content-Type': 'application/json',
-                                                'X-CSRFToken': getCookie('csrftoken'), // Получение CSRF-токена
-                                              },
-                                            });
-                                    
-                                            const data = await response.json();
-                                    
-                                            if (response.ok) {
-                                              // Обновляем счетчик лайков
-                                              document.getElementById('like-count').textContent = data.success;
-                                            } else {
-                                              console.error(data.error);
-                                            }
-                                          } catch (error) {
-                                            console.error('Произошла ошибка:', error);
-                                          }
-                                        });
-                                    
-                                        // Функция для получения CSRF-токена из куки
-                                        function getCookie(name) {
-                                          let cookieValue = null;
-                                          if (document.cookie && document.cookie !== '') {
-                                            const cookies = document.cookie.split(';');
-                                            for (let i = 0; i < cookies.length; i++) {
-                                              const cookie = cookies[i].trim();
-                                              if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                                                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                                                break;
-                                              }
-                                            }
-                                          }
-                                          return cookieValue;
-                                        }
-                                      </script>
+                                      
                                       
                                     {% endfor %}
                                     <div class="product__variant--list mb-15">
@@ -741,7 +711,7 @@
                                         </a>
                                         {% endif %}
                                     </div>
-                                  
+                               
                                     <div class="product__variant--list mb-15">
 
                                         <div class="product__details--info__meta">
@@ -1853,6 +1823,9 @@
 
   <!-- Customscript js -->
   <script src="{% static 'assets/js/script.js' %}" defer="defer"></script>
-  <script src="{% static 'index.js' %}"></script>
+  <script src="{% static 'index.js' %}" defer="defer"></script>
+ 
+ 
+   
 </body>
 </html

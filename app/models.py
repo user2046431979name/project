@@ -110,4 +110,4 @@ class Subscription(models.Model):
 class Cart(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     productObject = models.ForeignKey(Products,on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default=0)
