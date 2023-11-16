@@ -205,7 +205,6 @@ def setCart(request,id):
     isCart = Cart.objects.filter(productObject = row, author = user)  
     if isCart:
         cartProduct = Cart.objects.get(id = id)
-     
         cartProduct.quantity = cartProduct.quantity + 1
         cartProduct.save()
     else:
