@@ -111,3 +111,5 @@ class Cart(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
     productObject = models.ForeignKey(Products,on_delete=models.CASCADE)
     quantity = models.IntegerField(default=0)
+    def TotalPrice(self):
+        return self.quantity * self.productObject.price

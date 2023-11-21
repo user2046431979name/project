@@ -189,29 +189,40 @@ def myAccount(request):
     return render(request,'my-account.html')
 
 
-
-def setCart(request,id):
-        
+def setCart(request, id):
     if not(request.user.is_authenticated):
         return HttpResponseBadRequest('Пользователь не авторизован')
     user = request.user
-    row = Products.objects.get(id = id)
-    
+    row = Products.objects.get(id=id)
+
     quantity = 1
     if request.GET.get('quantity'):
-        quantity = int(request.GET.get('quantity'))
+        quantity = int(request.GET.get('quantity'),1)
+
+    
 
 
-    isCart = Cart.objects.filter(productObject = row, author = user)  
-    if isCart:
-        cartProduct = Cart.objects.get(id = id)
-        cartProduct.quantity = cartProduct.quantity + 1
-        cartProduct.save()
+    isAdded = Cart.objects.filter(productObject = row, author = user).exists()
+    if isAdded:
+        cartProduct = Cart.objects.get(productObject = row, author = user)
+        if request.GET.get('isMinus'):
+            cartProduct.quantity -= 1
+        else:
+            cartProduct.quantity += 1
+
+        if cartProduct.quantity <= 0:
+            cartProduct.delete()
+        else:
+            cartProduct.save()
     else:
-        Cart.objects.create(author=user,productObject = row,quantity = quantity)
-
+        Cart.objects.create(productObject = row, author = user, quantity = quantity)
+    
+    user = request.user
+    rows = Cart.objects.filter(author=user)
+    totalPrice = 0
+    for row in rows:
+        totalPrice += row.quantity * row.productObject.price
     return cart(request)
-
 def cart(request):
     user = request.user
     if not(request.user.is_authenticated):
@@ -222,17 +233,26 @@ def cart(request):
     
     totalPrice = 0
     for i in rows:
-        totalPrice =+ i.quantity
+        totalPrice = totalPrice + i.quantity * i.productObject.price
+    
+    newProducts = Products.objects.all().order_by("-created_at")[:6]
 
     context = {
         'rows':rows,
         'totalPrice':totalPrice,
+        'newProducts':newProducts
     }
     return render(request,'cart.html',context)
     
 
 
-
+def deleteShoppingCart(request, id):
+    try:
+       row = Cart.objects.get(id = id)
+       row.delete()
+       return cart(request)
+    except:
+       return cart(request)
 
 
 

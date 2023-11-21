@@ -21,6 +21,7 @@ urlpatterns = [
     path('getRating/<int:id>',getRaiting, name='getRating'),
     path('cart/',cart, name='shoppingCart'),
     path('setCart/<int:id>',setCart, name='setCart'),
+    path('deleteShoppingCart/<int:id>',deleteShoppingCart, name='deleteShoppingCart'),
 
 
 

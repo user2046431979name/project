@@ -1,3 +1,10 @@
+function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+}
+
+
 function pressLike(url) {
     const csrftoken = getCookie('csrftoken');
     
@@ -19,11 +26,6 @@ function pressLike(url) {
     });
 }
 
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
 
 async function setRating(url, rating, productId){
     const csrftoken = getCookie('csrftoken');
@@ -77,3 +79,6 @@ function setShoppingCart(url, isProductDetails = false){
             'X-CSRFToken': csrftoken, // Получаем CSRF-токен
         }}) 
 }
+
+
+
