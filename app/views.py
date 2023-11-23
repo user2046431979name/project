@@ -11,8 +11,7 @@ from django.contrib.auth import login,logout
 from django.http import *
 class Index(TemplateView):
     template_name = 'index.html'
-    
-    
+  
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -23,6 +22,10 @@ class Index(TemplateView):
             products = Products.objects.filter(categoryObject=category)[:10]
             context["category_data"][category] = products
 
+
+        context['blogs'] = Blogs.objects.order_by('created_at')[:5]
+
+        context['randomImages'] = ProductsImages.objects.order_by('?')[:8]
         return context  
           
   
@@ -58,11 +61,13 @@ class contact(CreateView):
 
 
 def about(request):
+    slider = SliderProducts.objects.order_by('?')[:3]
     workers = Workers.objects.all()
     reviews = Reviews.objects.all()[:8]
     context = {
         'workers':workers,
-        'reviews':reviews
+        'reviews':reviews,
+        'slider':slider
     }
     return render(request,'about.html',context)
 def blog(request):
